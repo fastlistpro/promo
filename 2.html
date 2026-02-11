@@ -1,74 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastListPro - Royal Welcome</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: "Segoe UI", system-ui, sans-serif; background: #0a0a1a; color: #e0e0e0; overflow-x: hidden; margin-top: 40px !important; }
-        
-        #flp-relaunch-bar { display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 40px; background: linear-gradient(135deg,#1a0a2e,#0d1b3e); align-items: center; justify-content: center; z-index: 999999; border-bottom: 1px solid rgba(255,215,0,0.4); text-decoration: none; }
-        .bar-text { color: #ffd700; font-family: serif; font-size: 13px; font-weight: 600; letter-spacing: 0.5px; }
-
-        .hero { background: linear-gradient(135deg, #1a0a2e 0%, #0d1b3e 100%); padding: 80px 20px; text-align: center; border-bottom: 2px solid rgba(255, 215, 0, 0.2); }
-        .badge { display: inline-block; background: linear-gradient(135deg, #ffd700, #ff8c00); color: #1a0a2e; padding: 10px 30px; border-radius: 50px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; }
-        
-        h1 { font-size: clamp(32px, 6vw, 60px); font-weight: 900; background: linear-gradient(135deg, #fff 30%, #ffd700 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.1; margin-bottom: 20px; }
-        .subtitle { font-size: clamp(18px, 3vw, 24px); color: #b0b0d0; max-width: 800px; margin: 0 auto 40px; line-height: 1.6; }
-
-        .features { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        .feat-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(123, 47, 247, 0.3); border-radius: 15px; padding: 30px; flex: 1; min-width: 280px; text-align: left; }
-        .feat-card h3 { color: #ffd700; font-size: 22px; margin-bottom: 15px; }
-        .feat-card p { color: #a0a0c0; line-height: 1.5; }
-
-        .cta-btn { display: inline-block; background: linear-gradient(135deg, #ffd700, #ff8c00); color: #1a0a2e; padding: 22px 60px; border-radius: 50px; font-size: 24px; font-weight: 900; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3); transition: 0.3s; text-decoration: none; margin-top: 40px; }
-        .cta-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 50px rgba(255, 215, 0, 0.5); }
-
-        .footer { text-align: center; padding: 40px 20px; color: #606080; font-size: 14px; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FastListPro - Grow Your List Fast</title>
+<link href="https://fonts.googleapis.com/css2?family=Georgia&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body,html{height:100%;font-family:"Montserrat",sans-serif;}
+.bg{
+  background:linear-gradient(135deg,#0d0518 0%,#1a0a2e 30%,#2d1854 60%,#1a0a2e 100%);
+  min-height:100vh;display:flex;justify-content:center;align-items:center;
+  position:relative;overflow:hidden;
+}
+.bg::before{
+  content:"";position:absolute;top:0;left:0;right:0;bottom:0;
+  background:radial-gradient(ellipse at 30% 20%,rgba(180,140,60,0.08) 0%,transparent 50%),
+             radial-gradient(ellipse at 70% 80%,rgba(180,140,60,0.05) 0%,transparent 50%);
+}
+.card{
+  position:relative;z-index:1;width:90%;max-width:620px;
+  border:2px solid rgba(180,140,60,0.4);border-radius:24px;
+  background:linear-gradient(180deg,rgba(26,10,46,0.95),rgba(13,5,24,0.98));
+  box-shadow:0 0 60px rgba(180,140,60,0.15),0 20px 40px rgba(0,0,0,0.5);
+  padding:0;overflow:hidden;
+}
+.card-header{
+  background:linear-gradient(90deg,rgba(180,140,60,0.15),rgba(180,140,60,0.05));
+  border-bottom:1px solid rgba(180,140,60,0.3);
+  padding:24px 32px;text-align:center;
+}
+.logo-text{
+  font-family:Georgia,serif;font-size:32px;font-weight:700;
+  background:linear-gradient(135deg,#d4a843,#f0d68a,#b48c3c);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  letter-spacing:1px;
+}
+.logo-sub{color:rgba(255,255,255,0.6);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-top:4px;}
+.card-body{padding:40px 32px;text-align:center;}
+.headline{
+  font-size:28px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:8px;
+}
+.headline span{
+  background:linear-gradient(135deg,#d4a843,#f0d68a);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.subtitle{color:rgba(255,255,255,0.7);font-size:15px;line-height:1.6;margin-bottom:32px;}
+.features{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;}
+.feature{
+  background:rgba(180,140,60,0.08);border:1px solid rgba(180,140,60,0.2);
+  border-radius:12px;padding:16px;width:160px;text-align:center;
+}
+.feature-icon{font-size:28px;margin-bottom:8px;}
+.feature-label{color:#d4a843;font-size:13px;font-weight:600;}
+.cta-btn{
+  display:inline-block;padding:16px 48px;
+  background:linear-gradient(135deg,#b48c3c,#d4a843,#f0d68a,#d4a843);
+  background-size:200% 200%;
+  color:#1a0a2e;font-size:18px;font-weight:800;text-transform:uppercase;
+  text-decoration:none;border-radius:50px;letter-spacing:2px;
+  box-shadow:0 4px 20px rgba(180,140,60,0.4);
+  transition:all 0.3s ease;
+}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(180,140,60,0.6);}
+.footer-note{color:rgba(255,255,255,0.4);font-size:11px;margin-top:24px;}
+@media(max-width:575px){
+  .card-body{padding:24px 16px;}
+  .headline{font-size:22px;}
+  .features{flex-direction:column;align-items:center;}
+  .cta-btn{padding:14px 32px;font-size:15px;}
+}
+</style>
 </head>
 <body>
-
-<a id="flp-relaunch-bar" href="#" onclick="goToRegister(); return false;">
-    <span class="bar-text">🚀 FastListPro.com Has Relaunched — Claim Your New Member Credits Today!</span>
-</a>
-
-<div class="hero">
-    <div class="badge">A Royal Welcome</div>
-    <h1>Advertising For<br>Ambitious Professionals</h1>
-    <p class="subtitle">Join the next generation of credit-based viral mailing. Reach engaged marketers, earn rewards, and grow your list with speed.</p>
-    
+<div class="bg">
+<div class="card">
+  <div class="card-header">
+    <div class="logo-text">FastListPro</div>
+    <div class="logo-sub">Advertising for Ambitious Professionals</div>
+  </div>
+  <div class="card-body">
+    <h1 class="headline"><span>Grow Your List</span><br>Like Never Before</h1>
+    <p class="subtitle">Join thousands of marketers using the most powerful safelist platform to drive targeted traffic and build responsive email lists.</p>
     <div class="features">
-        <div class="feat-card">
-            <h3>⚡ Instant Reach</h3>
-            <p>Get your message in front of active professionals immediately. Our community is built for engagement.</p>
-        </div>
-        <div class="feat-card">
-            <h3>📈 Viral Growth</h3>
-            <p>Our unique reward system encourages members to share and engage, giving your ads a massive boost.</p>
-        </div>
-        <div class="feat-card">
-            <h3>💎 Quality Leads</h3>
-            <p>No bots, no fake traffic. Real people looking for real opportunities in the marketing space.</p>
-        </div>
+      <div class="feature"><div class="feature-icon">🚀</div><div class="feature-label">Instant Traffic</div></div>
+      <div class="feature"><div class="feature-icon">💰</div><div class="feature-label">Earn Credits</div></div>
+      <div class="feature"><div class="feature-icon">👥</div><div class="feature-label">Build Downline</div></div>
     </div>
-
-    <a href="#" onclick="goToRegister(); return false;" class="cta-btn">Get Started Free</a>
+    <a href="https://fastlistpro.com/?rid=2" class="cta-btn">Join Free Today</a>
+    <p class="footer-note">100% Free To Join • No Credit Card Required</p>
+  </div>
 </div>
-
-<div class="footer">
-    FastListPro — The Premium Advertising Network<br>© 2026. All rights reserved.
 </div>
 
 <script>
-function goToRegister(){
-    const urlParams = new URLSearchParams(window.location.search);
-    const rid = urlParams.get('rid') || '';
-    const dest = "https://fastlistpro.com/auth?tab=signup&rid=" + rid;
-    window.top ? window.top.location.href = dest : window.location.href = dest;
-}
+  const urlParams = new URLSearchParams(window.location.search);
+  const rid = urlParams.get('rid') || '1'; 
+  document.querySelectorAll('a').forEach(link => {
+    if (link.href.includes('fastlistpro.com')) {
+      link.href = "https://fastlistpro.com/?rid=" + rid;
+    }
+  });
 </script>
-    <script> const urlParams = new URLSearchParams(window.location.search); const rid = urlParams.get('rid') || '1'; document.querySelectorAll('a').forEach(link => { link.href = "" + rid; }); </script>
 </body>
 </html>
