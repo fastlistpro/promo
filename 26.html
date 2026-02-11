@@ -29,5 +29,14 @@ p{font-size:16px;line-height:1.8;}
 <a href="https://fastlistpro.com/?rid=2" class="cta-button">👉 Join Now at FastListPro.com</a>
 </div>
 <div class="banner"><span class="icon">🚀</span>Don't Miss Out - Start Referring and WIN BIG!<span class="icon">🚀</span></div>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const rid = urlParams.get('rid') || '1';
+  document.querySelectorAll('a').forEach(link => {
+    if (link.href.includes('fastlistpro.com')) {
+      link.href = "https://fastlistpro.com/?rid=" + rid;
+    }
+  });
+</script>
 </body>
 </html>
