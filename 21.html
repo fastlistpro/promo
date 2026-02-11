@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Primary Meta Tags -->
     <title>FastListPro - Advertising For Ambitious Professionals</title>
     <meta name="description" content="FastListPro is a credit-based viral mailer that lets you earn credits by reading emails and send your promotions to engaged marketers. Free to join with instant mailing credits." />
     <meta name="author" content="FastListPro" />
@@ -12,7 +11,6 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://fastlistpro.com/" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://fastlistpro.com/" />
     <meta property="og:title" content="FastListPro - Advertising For Ambitious Professionals" />
@@ -21,14 +19,12 @@
     <meta property="og:site_name" content="FastListPro" />
     <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://fastlistpro.com/" />
     <meta name="twitter:title" content="FastListPro - Advertising For Ambitious Professionals" />
     <meta name="twitter:description" content="Credit-based viral mailer for ambitious professionals. Earn by reading, send to engaged marketers." />
     <meta name="twitter:image" content="https://fastlistpro.com/og-image.png" />
 
-    <!-- Structured Data - Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -41,7 +37,6 @@
     }
     </script>
 
-    <!-- Structured Data - WebSite with SearchAction -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -57,7 +52,6 @@
     }
     </script>
 
-    <!-- Structured Data - FAQPage -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -91,7 +85,6 @@
     }
     </script>
 
-    <!-- Theme Color for mobile browsers -->
     <meta name="theme-color" content="#6b21a8" />
     <meta name="msapplication-TileColor" content="#6b21a8" />
     <script type="module" crossorigin src="/assets/index-BO-SYMY1.js"></script>
@@ -101,13 +94,14 @@
   <body>
     <div id="root"></div>
     <script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const rid = urlParams.get('rid') || '1'; 
-  document.querySelectorAll('a').forEach(link => {
-    if (link.href.includes('fastlistpro.com')) {
-      link.href = "https://fastlistpro.com/?rid=" + rid;
-    }
-  });
-</script>
+      // THIS IS THE ONLY ADDITION
+      const urlParams = new URLSearchParams(window.location.search);
+      const rid = urlParams.get('rid') || '1'; 
+      document.querySelectorAll('a').forEach(link => {
+        if (link.href.includes('fastlistpro.com')) {
+          link.href = "https://fastlistpro.com/?rid=" + rid;
+        }
+      });
+    </script>
   </body>
 </html>
