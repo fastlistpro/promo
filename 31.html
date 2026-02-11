@@ -44,5 +44,14 @@ td{border:1px solid #fff;padding:10px;text-align:center;}
 <div class="cta-wrap"><a href="https://fastlistpro.com/?rid=2" class="cta">Sign Up & Compete Now</a></div>
 </div>
 </div>
+  <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const rid = urlParams.get('rid') || '1';
+  document.querySelectorAll('a').forEach(link => {
+    if (link.href.includes('fastlistpro.com')) {
+      link.href = "https://fastlistpro.com/?rid=" + rid;
+    }
+  });
+</script>
 </body>
 </html>
