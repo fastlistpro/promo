@@ -40,5 +40,14 @@ h2{font-size:28px;color:#222;text-align:center;margin-bottom:10px;}
 <div class="winner-title">Join the Winners Circle</div>
 </div>
 </div>
+  <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const rid = urlParams.get('rid') || '1';
+  document.querySelectorAll('a').forEach(link => {
+    if (link.href.includes('fastlistpro.com')) {
+      link.href = "https://fastlistpro.com/?rid=" + rid;
+    }
+  });
+</script>
 </body>
 </html>
