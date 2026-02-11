@@ -30,5 +30,14 @@ li{margin:8px 0;}
 </ul>
 <a class="cta-button" href="https://fastlistpro.com/?rid=2">Click Here to Join FastListPro.com</a>
 </div>
+  <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const rid = urlParams.get('rid') || '1';
+  document.querySelectorAll('a').forEach(link => {
+    if (link.href.includes('fastlistpro.com')) {
+      link.href = "https://fastlistpro.com/?rid=" + rid;
+    }
+  });
+</script>
 </body>
 </html>
