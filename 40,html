@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FastListPro - The Smart Marketer's Choice</title>
+<link href="https://fonts.googleapis.com/css2?family=Georgia&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body,html{height:100%;font-family:"Montserrat",sans-serif;}
+.bg{
+  background:linear-gradient(160deg,#0d0518 0%,#1a0a2e 40%,#2d1854 70%,#1a0a2e 100%);
+  min-height:100vh;display:flex;justify-content:center;align-items:center;
+  position:relative;overflow:hidden;
+}
+.bg::before{
+  content:"";position:absolute;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(180,140,60,0.1),transparent 70%);
+  top:-100px;right:-100px;border-radius:50%;
+}
+.bg::after{
+  content:"";position:absolute;width:400px;height:400px;
+  background:radial-gradient(circle,rgba(100,60,180,0.15),transparent 70%);
+  bottom:-100px;left:-100px;border-radius:50%;
+}
+.container{position:relative;z-index:1;width:90%;max-width:700px;text-align:center;}
+.badge{
+  display:inline-block;padding:6px 20px;margin-bottom:24px;
+  border:1px solid rgba(180,140,60,0.5);border-radius:50px;
+  color:#d4a843;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  background:rgba(180,140,60,0.08);
+}
+.main-headline{
+  font-family:Georgia,serif;font-size:42px;font-weight:700;color:#fff;
+  line-height:1.2;margin-bottom:16px;
+}
+.main-headline em{
+  font-style:normal;
+  background:linear-gradient(135deg,#d4a843,#f0d68a,#b48c3c);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.tagline{color:rgba(255,255,255,0.65);font-size:16px;line-height:1.7;margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;}
+.stats-row{display:flex;gap:24px;justify-content:center;margin-bottom:40px;flex-wrap:wrap;}
+.stat{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(180,140,60,0.2);
+  border-radius:16px;padding:20px 28px;min-width:140px;
+}
+.stat-num{
+  font-size:28px;font-weight:800;
+  background:linear-gradient(135deg,#d4a843,#f0d68a);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.stat-label{color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-top:4px;}
+.cta-btn{
+  display:inline-block;padding:18px 56px;
+  background:linear-gradient(135deg,#b48c3c,#d4a843,#f0d68a,#d4a843);
+  background-size:200% 200%;
+  color:#1a0a2e;font-size:18px;font-weight:800;text-transform:uppercase;
+  text-decoration:none;border-radius:50px;letter-spacing:2px;
+  box-shadow:0 4px 30px rgba(180,140,60,0.4);
+  transition:all 0.3s ease;
+}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(180,140,60,0.6);}
+.trust{color:rgba(255,255,255,0.35);font-size:12px;margin-top:20px;}
+.divider{
+  width:60px;height:2px;margin:0 auto 24px;
+  background:linear-gradient(90deg,transparent,#d4a843,transparent);
+}
+@media(max-width:575px){
+  .main-headline{font-size:28px;}
+  .stats-row{flex-direction:column;align-items:center;}
+  .cta-btn{padding:14px 36px;font-size:15px;}
+}
+</style>
+</head>
+<body>
+<div class="bg">
+<div class="container">
+  <div class="badge">✦ The Smart Marketer's Choice ✦</div>
+  <h1 class="main-headline">Stop Wasting Money.<br><em>Start Building Your Empire.</em></h1>
+  <div class="divider"></div>
+  <p class="tagline">FastListPro delivers targeted traffic, responsive subscribers, and real commissions - all from one powerful platform built for ambitious professionals.</p>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num">50K+</div><div class="stat-label">Active Members</div></div>
+    <div class="stat"><div class="stat-num">1M+</div><div class="stat-label">Emails Sent</div></div>
+    <div class="stat"><div class="stat-num">$25K+</div><div class="stat-label">Paid Out</div></div>
+  </div>
+  <a href="https://fastlistpro.com/?rid=2" class="cta-btn">Get Started Free</a>
+  <p class="trust">No credit card needed • Instant access • Cancel anytime</p>
+</div>
+</div>
+</body>
+</html>
