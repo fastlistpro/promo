@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FastListPro - Monthly Cash Referral Contest</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:#0a0a1a;color:#e0e0e0;overflow-x:hidden}
+.top-fix-bar{background:rgba(26,10,46,0.9);padding:20px;text-align:center;border-bottom:1px solid rgba(255,215,0,0.3);position:relative;z-index:999}
+.hero{background:linear-gradient(135deg,#1a0a2e 0%,#0d1b3e 50%,#1a0a2e 100%);padding:60px 20px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,215,0,0.03) 0%,transparent 50%);animation:pulse 8s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.badge{display:inline-block;background:linear-gradient(135deg,#ffd700,#ff8c00);color:#1a0a2e;padding:8px 24px;border-radius:50px;font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px}
+h1{font-size:clamp(28px,5vw,52px);font-weight:900;background:linear-gradient(135deg,#fff 30%,#ffd700 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;margin-bottom:12px}
+.subtitle{font-size:clamp(16px,2.5vw,22px);color:#b0b0d0;max-width:650px;margin:0 auto 30px;line-height:1.6}
+.prize-showcase{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:30px auto;max-width:700px}
+.prize-card{background:linear-gradient(145deg,rgba(255,215,0,0.1),rgba(255,140,0,0.05));border:2px solid rgba(255,215,0,0.3);border-radius:16px;padding:24px 20px;min-width:140px;flex:1;text-align:center;transition:transform 0.3s}
+.prize-rank{font-size:14px;color:#ffd700;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.prize-amount{font-size:clamp(32px,4vw,48px);font-weight:900;color:#ffd700;text-shadow:0 0 20px rgba(255,215,0,0.3)}
+.prize-label{font-size:13px;color:#a0a0c0;margin-top:4px}
+.section{padding:50px 20px;max-width:900px;margin:0 auto}
+.section-title{font-size:clamp(22px,3.5vw,34px);font-weight:800;text-align:center;margin-bottom:12px;color:#fff}
+.mechanic-box{background:linear-gradient(145deg,rgba(123,47,247,0.12),rgba(75,0,130,0.06));border:2px solid rgba(123,47,247,0.3);border-radius:20px;padding:40px 30px;max-width:700px;margin:0 auto 40px;text-align:center}
+.mechanic-title{font-size:24px;font-weight:800;color:#ffd700;margin-bottom:16px}
+.mechanic-desc{font-size:16px;color:#c0c0d8;line-height:1.8;margin-bottom:20px}
+.mechanic-highlight{background:linear-gradient(135deg,#ffd700,#ff8c00);color:#1a0a2e;padding:14px 28px;border-radius:12px;font-size:20px;font-weight:800;display:inline-block;margin:10px 0}
+.mechanic-highlight-purple{background:linear-gradient(135deg,#7b2ff7,#4a0e8f);color:#ffd700;padding:14px 28px;border-radius:12px;font-size:18px;font-weight:800;display:inline-block;margin:10px 0}
+.ticket-visual{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:30px auto;max-width:600px}
+.ticket-example{background:linear-gradient(145deg,rgba(255,215,0,0.08),rgba(255,140,0,0.04));border:1px solid rgba(255,215,0,0.2);border-radius:12px;padding:20px;flex:1;min-width:160px;text-align:center}
+.ticket-example.qualify{border-color:rgba(123,47,247,0.4);background:linear-gradient(145deg,rgba(123,47,247,0.1),rgba(75,0,130,0.05))}
+.ticket-refs{font-size:28px;font-weight:900;color:#ffd700}.ticket-arrow{font-size:20px;color:#7b2ff7;margin:6px 0}
+.ticket-entries{font-size:16px;font-weight:700;color:#fff}.ticket-label{font-size:12px;color:#a0a0c0;margin-top:4px}
+.how-it-works{background:linear-gradient(180deg,rgba(138,43,226,0.06) 0%,transparent 100%);padding:50px 20px}
+.steps{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;max-width:900px;margin:0 auto}
+.step{text-align:center;flex:1;min-width:160px;max-width:200px}.step-num{width:50px;height:50px;background:linear-gradient(135deg,#7b2ff7,#4a0e8f);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#ffd700;margin:0 auto 14px;box-shadow:0 0 20px rgba(123,47,247,0.3)}
+.step-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:6px}.step-desc{font-size:13px;color:#a0a0c0;line-height:1.5}
+.cta-section{text-align:center;padding:80px 20px;background:linear-gradient(180deg,transparent,rgba(255,215,0,0.03))}
+.cta-btn{display:inline-block;background:linear-gradient(135deg,#ffd700,#ff8c00);color:#1a0a2e;padding:18px 50px;border-radius:50px;font-size:20px;font-weight:800;border:none;cursor:pointer;text-transform:uppercase;letter-spacing:1px;box-shadow:0 8px 30px rgba(255,215,0,0.3);transition:transform 0.3s}
+.cta-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 40px rgba(255,215,0,0.45)}
+.bonus-strip{background:linear-gradient(90deg,#7b2ff7,#4a0e8f,#7b2ff7);padding:14px;text-align:center;font-weight:700;font-size:15px;color:#ffd700;letter-spacing:1px}
+.footer{text-align:center;padding:30px 20px;font-size:13px;color:#606080;border-top:1px solid rgba(255,255,255,0.05)}
+</style>
+</head>
+<body>
+<a id="flp-relaunch-bar" href="https://fastlistpro.com/" target="_top" style="display:flex;position:fixed;top:0;left:0;width:100%;height:40px;background:linear-gradient(135deg,#1a0a2e,#0d1b3e);align-items:center;justify-content:center;z-index:999999;border-bottom:1px solid rgba(255,215,0,0.4);text-decoration:none;">
+    <span style="color:#ffd700;font-family:serif;font-size:13px;font-weight:600;letter-spacing:0.5px;">🚀 FastListPro.com Has Relaunched — New Features, Same Great Community!</span>
+</a>
+<style>body{margin-top:40px !important;}</style>
+
+<div class="bonus-strip">🎟️ 1 REFERRAL = 1 TICKET • BRING 5+ TO QUALIFY FOR THE CASH DRAWING!</div>
+
+<div class="top-fix-bar">
+    <button onclick="goToRegister()" class="cta-btn">🚀 Create My Free Account</button>
+</div>
+
+<div class="hero">
+    <div class="badge">🏆 Monthly Cash Drawing</div>
+    <h1>Refer Friends.<br>Earn Lottery Tickets.<br>Win Real Cash.</h1>
+    <p class="subtitle">Every single referral earns you a lottery ticket. Bring in at least 5 to qualify for the monthly cash drawing — then every extra ticket increases your odds of winning.</p>
+
+    <div class="prize-showcase">
+        <div class="prize-card"><div class="prize-rank">🥇 1st Place</div><div class="prize-amount">$50</div><div class="prize-label">Cash Prize</div></div>
+        <div class="prize-card"><div class="prize-rank">🥈 2nd Place</div><div class="prize-amount">$25</div><div class="prize-label">Cash Prize</div></div>
+        <div class="prize-card"><div class="prize-rank">🥉 3rd Place</div><div class="prize-amount">$10</div><div class="prize-label">Cash Prize</div></div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="mechanic-box">
+        <div class="mechanic-title">🎟️ How the Drawing Works</div>
+        <div class="mechanic-desc">Every person you refer earns you <strong style="color:#ffd700">1 lottery ticket</strong>. But there's one rule:</div>
+        <div class="mechanic-highlight">1 Referral = 1 Lottery Ticket</div>
+        <div class="mechanic-highlight-purple">⚡ Minimum 5 Referrals to Qualify</div>
+    </div>
+</div>
+
+<div class="cta-section">
+    <h2 class="section-title">The Drawing Happens Every Month</h2>
+    <button onclick="goToRegister()" class="cta-btn">🚀 Create My Free Account</button>
+</div>
+
+<div class="footer">FastListPro — Advertising For Ambitious Professionals<br>© 2026 FastListPro. All rights reserved.</div>
+
+<script>
+function goToRegister(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const rid = urlParams.get('rid') || '';
+    const dest = "https://fastlistpro.com/auth?tab=signup&rid=" + rid;
+    window.top ? window.top.location.href = dest : window.location.href = dest;
+}
+</script>
+</body>
+</html>
