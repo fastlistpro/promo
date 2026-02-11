@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FastListPro - Cash Contest Celebration</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:#0a0a1a;color:#e0e0e0;overflow-x:hidden}
+.hero{background:linear-gradient(135deg,#1a0a2e 0%,#2d1b3e 50%,#1a0a2e 100%);padding:80px 20px;text-align:center;position:relative;}
+.badge{display:inline-block;background:linear-gradient(135deg,#ffd700,#ff8c00);color:#1a0a2e;padding:8px 24px;border-radius:50px;font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px}
+h1{font-size:clamp(32px,5vw,60px);font-weight:900;background:linear-gradient(135deg,#fff 30%,#ffd700 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1;margin-bottom:20px}
+.prize-banner{background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.3);padding:30px;border-radius:20px;max-width:600px;margin:0 auto 40px}
+.prize-amount{font-size:48px;font-weight:900;color:#ffd700;display:block}
+.prize-text{color:#fff;font-size:18px;letter-spacing:1px}
+.cta-btn{display:inline-block;background:linear-gradient(135deg,#ffd700,#ff8c00);color:#1a0a2e;padding:20px 60px;border-radius:50px;font-size:22px;font-weight:800;text-decoration:none;text-transform:uppercase;box-shadow:0 8px 30px rgba(255,215,0,0.3);transition:0.3s}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(255,215,0,0.5)}
+.footer{margin-top:50px;font-size:12px;color:rgba(255,255,255,0.3)}
+</style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="badge">🔥 Limited Time Event</div>
+    <h1>The Cash Contest<br>Celebration is LIVE!</h1>
+    
+    <div class="prize-banner">
+        <span class="prize-text">WE ARE GIVING AWAY</span>
+        <span class="prize-amount">$85.00+</span>
+        <span class="prize-text">IN MONTHLY CASH PRIZES</span>
+    </div>
+
+    <a href="https://fastlistpro.com/?rid=1" class="cta-btn">Join The Celebration</a>
+    
+    <div class="footer">
+        FastListPro &copy; 2026<br>
+        Real Traffic. Real People. Real Cash.
+    </div>
+</div>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const rid = urlParams.get('rid') || '1';
+  document.querySelectorAll('a').forEach(link => {
+    if (link.href.includes('fastlistpro.com')) {
+      link.href = "https://fastlistpro.com/?rid=" + rid;
+    }
+  });
+</script>
+</body>
+</html>
