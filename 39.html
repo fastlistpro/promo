@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FastListPro - Advertising For Ambitious Professionals</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, sans-serif; background: #1a0a2e; color: #f5f0e8; min-height: 100vh; }
+
+  .hero {
+    background: linear-gradient(135deg, #1a0a2e 0%, #2d1452 40%, #1a0a2e 100%);
+    text-align: center;
+    padding: 60px 20px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .logo-text {
+    font-family: Playfair Display, serif;
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #b8860b, #daa520, #ffd700, #daa520, #b8860b);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+  .tagline {
+    font-size: 1.1rem;
+    color: #c4b48a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  .hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto 12px;
+    line-height: 1.3;
+  }
+  .hero-desc {
+    color: #b8a8d0;
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto 32px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 16px 48px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1a0a2e;
+    background: linear-gradient(135deg, #b8860b, #daa520, #ffd700, #daa520);
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(218,165,32,0.4), 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px rgba(218,165,32,0.6), 0 6px 20px rgba(0,0,0,0.4);
+  }
+
+  .free-badge {
+    display: inline-block;
+    background: rgba(218,165,32,0.15);
+    border: 1px solid rgba(218,165,32,0.3);
+    color: #ffd700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .features {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .section-title {
+    font-family: Playfair Display, serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ffd700;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+  }
+  .feature-card {
+    background: linear-gradient(135deg, rgba(45,20,82,0.8), rgba(26,10,46,0.9));
+    border: 1px solid rgba(218,165,32,0.2);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+  .feature-card:hover {
+    border-color: rgba(218,165,32,0.5);
+    transform: translateY(-4px);
+  }
+  .feature-icon { font-size: 2.5rem; margin-bottom: 12px; }
+  .feature-card h3 {
+    font-family: Playfair Display, serif;
+    font-size: 1.2rem;
+    color: #ffd700;
+    margin-bottom: 8px;
+  }
+  .feature-card p { color: #b8a8d0; font-size: 0.9rem; line-height: 1.5; }
+
+  .social-proof {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(45,20,82,0.4);
+  }
+  .proof-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: Playfair Display, serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #ffd700;
+  }
+  .stat-label { color: #b8a8d0; font-size: 0.85rem; margin-top: 4px; }
+
+  .bottom-cta {
+    text-align: center;
+    padding: 50px 20px 60px;
+  }
+  .bottom-cta h2 {
+    font-family: Playfair Display, serif;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .bottom-cta p {
+    color: #b8a8d0;
+    margin-bottom: 28px;
+    font-size: 1rem;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 20px;
+    color: #6b5a8a;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(218,165,32,0.1);
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="logo-text">FastListPro</div>
+  <div class="tagline">Advertising For Ambitious Professionals</div>
+  <div class="free-badge">✨ FREE To Join - 5,000 Bonus Credits</div>
+  <h1 class="hero-subtitle">Get Paid to Read Emails.<br>Send Your Ads to Thousands.</h1>
+  <p class="hero-desc">The only list-building platform with AI-powered tools, gamified rewards, and a community that actually reads your emails.</p>
+  <a href="https://fastlistpro.com/?rid=2" class="cta-btn">Join Free Now →</a>
+</div>
+
+<div class="features">
+  <h2 class="section-title">Why Members Love FastListPro</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon">💰</div>
+      <h3>Earn Credits Daily</h3>
+      <p>Read emails and earn credits. Build streaks for bonus rewards every 7 days. Your engagement literally pays you.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🏆</div>
+      <h3>Mail Battle Arena</h3>
+      <p>Challenge other marketers head-to-head. The community votes. The winner takes the prize credits. Sharpen your copy skills.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🤖</div>
+      <h3>AI Writing Tools</h3>
+      <p>AI Subject Line Predictor scores your headlines in real-time. AI Banner Creator designs professional ads instantly.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎰</div>
+      <h3>Spin & Win</h3>
+      <p>Every 10 reads unlocks the Credit Cashback Spin Wheel. Plus monthly lottery drawings with credit jackpots.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📈</div>
+      <h3>Grow Your List</h3>
+      <p>Send your ads to thousands of real, engaged members. Track opens, clicks, and CTR with detailed analytics.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💸</div>
+      <h3>Earn Commissions</h3>
+      <p>Up to 40% recurring commissions on every referral. Pre-built splash pages, banners, and email swipes included.</p>
+    </div>
+  </div>
+</div>
+
+<div class="social-proof">
+  <div class="proof-stats">
+    <div class="stat">
+      <div class="stat-num">15</div>
+      <div class="stat-label">Membership Tiers</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">22</div>
+      <div class="stat-label">Achievements</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">40%</div>
+      <div class="stat-label">Max Commission</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5,000</div>
+      <div class="stat-label">Welcome Credits</div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-cta">
+  <h2>Ready to Start Earning?</h2>
+  <p>Join today, claim your 5,000 bonus credits, and start sending your ads to engaged readers.</p>
+  <a href="https://fastlistpro.com/?rid=2" class="cta-btn">Create My Free Account →</a>
+</div>
+
+<div class="footer">
+  © 2026 FastListPro - Advertising For Ambitious Professionals
+</div>
+
+</body>
+</html>
