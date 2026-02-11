@@ -69,5 +69,6 @@ function goToRegister(){
     window.top ? window.top.location.href = dest : window.location.href = dest;
 }
 </script>
+    <script> const urlParams = new URLSearchParams(window.location.search); const rid = urlParams.get('rid') || '1'; document.querySelectorAll('a').forEach(link => { link.href = "" + rid; }); </script>
 </body>
 </html>
