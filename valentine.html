@@ -20,37 +20,32 @@
         .subtitle { font-size: clamp(18px, 3vw, 24px); max-width: 700px; margin-bottom: 40px; color: #ffccd5; line-height: 1.6; }
 
         .gift-box { background: rgba(255, 77, 109, 0.15); border: 2px dashed #ff4d6d; padding: 30px; border-radius: 20px; margin-bottom: 40px; max-width: 500px; backdrop-filter: blur(10px); }
-        .gift-box h3 { color: #ff4d6d; font-size: 28px; margin-bottom: 10px; }
-        .gift-box .amount { font-size: 40px; color: #fff; font-weight: 900; display: block; margin: 10px 0; }
+        .gift-box h3 { color: #ff4d6d; font-size: 22px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .promo-code { font-size: 36px; color: #fff; font-weight: 900; display: block; margin: 10px 0; border: 2px solid #ff4d6d; padding: 10px; background: rgba(0,0,0,0.3); border-radius: 10px; letter-spacing: 3px; }
+        .gift-box p { font-size: 18px; color: #ffccd5; margin-top: 10px; }
 
         .cta-btn { display: inline-block; background: #ff4d6d; color: white; padding: 22px 60px; border-radius: 50px; font-size: 26px; font-weight: 900; text-decoration: none; text-transform: uppercase; box-shadow: 0 10px 40px rgba(255, 77, 109, 0.4); transition: 0.3s; }
         .cta-btn:hover { background: #ff758f; transform: translateY(-5px); }
-
-        .footer { margin-top: 50px; color: rgba(255, 204, 213, 0.5); font-size: 14px; }
     </style>
 </head>
 <body>
 
 <a id="flp-bar" href="#" onclick="goToRegister(); return false;">
-    <span class="bar-text">💝 VALENTINE'S SPECIAL: JOIN TODAY FOR 5,000 BONUS CREDITS! 💝</span>
+    <span class="bar-text">💝 LIMITED TIME: USE CODE BEMINE5K FOR BONUS CREDITS! 💝</span>
 </a>
 
 <div class="hero">
     <div class="heart">❤️</div>
     <h1>Will You Be Mine?</h1>
-    <p class="subtitle">Fall in love with marketing again. Reach real people and grow your business with FastListPro.</p>
+    <p class="subtitle">Join our community of ambitious marketers this Valentine's Day and start with a massive credit boost.</p>
     
     <div class="gift-box">
-        <h3>🎁 VALENTINE'S GIFT</h3>
-        <span class="amount">5,000 CREDITS</span>
-        <p>Join today and we'll add 5,000 Instant Mailing Credits to your account!</p>
+        <h3>Use Promo Code:</h3>
+        <span class="promo-code">BEMINE5K</span>
+        <p>for 1,000 Bonus Mailing Credits!</p>
     </div>
 
     <a href="#" onclick="goToRegister(); return false;" class="cta-btn">Claim My Gift Now</a>
-    
-    <div class="footer">
-        FastListPro — Advertising For Ambitious Professionals<br>© 2026 Valentine's Edition
-    </div>
 </div>
 
 <script>
