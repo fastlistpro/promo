@@ -3,51 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastListPro - Royal Welcome</title>
+    <title>FastListPro - Valentine's Special</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: "Segoe UI", system-ui, sans-serif; background: #0a0a1a; color: #e0e0e0; overflow-x: hidden; margin-top: 40px !important; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #4a0512; color: white; overflow-x: hidden; }
         
-        #flp-bar { display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 40px; background: linear-gradient(135deg,#1a0a2e,#0d1b3e); align-items: center; justify-content: center; z-index: 999999; border-bottom: 1px solid rgba(255,215,0,0.4); text-decoration: none; }
-        .bar-text { color: #ffd700; font-family: serif; font-size: 13px; font-weight: 600; letter-spacing: 0.5px; }
+        #flp-bar { display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 40px; background: #ff4d6d; align-items: center; justify-content: center; z-index: 9999; border-bottom: 2px solid #ff758f; text-decoration: none; }
+        .bar-text { color: white; font-size: 14px; font-weight: bold; letter-spacing: 1px; }
 
-        .hero { background: linear-gradient(135deg, #1a0a2e 0%, #0d1b3e 100%); padding: 80px 20px; text-align: center; border-bottom: 2px solid rgba(255, 215, 0, 0.2); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .badge { display: inline-block; background: linear-gradient(135deg, #ffd700, #ff8c00); color: #1a0a2e; padding: 10px 30px; border-radius: 50px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; }
+        .hero { background: linear-gradient(rgba(74, 5, 18, 0.85), rgba(74, 5, 18, 0.85)), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 20px; text-align: center; }
         
-        h1 { font-size: clamp(32px, 6vw, 60px); font-weight: 900; background: linear-gradient(135deg, #fff 30%, #ffd700 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.1; margin-bottom: 20px; }
-        .subtitle { font-size: clamp(18px, 3vw, 24px); color: #b0b0d0; max-width: 800px; margin: 0 auto 40px; line-height: 1.6; }
+        .heart { font-size: clamp(60px, 10vw, 100px); margin-bottom: 20px; animation: pulse 1.5s infinite; filter: drop-shadow(0 0 20px #ff4d6d); }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        
+        h1 { font-size: clamp(32px, 8vw, 64px); font-weight: 900; color: #ffb3c1; line-height: 1.1; margin-bottom: 15px; text-transform: uppercase; }
+        .subtitle { font-size: clamp(18px, 3vw, 24px); max-width: 700px; margin-bottom: 40px; color: #ffccd5; line-height: 1.6; }
 
-        .gift-container { background: rgba(255, 215, 0, 0.05); border: 2px solid #ffd700; border-radius: 20px; padding: 40px; margin-bottom: 40px; max-width: 600px; box-shadow: 0 0 30px rgba(255, 215, 0, 0.1); }
-        .gift-amount { font-size: 50px; font-weight: 900; color: #ffd700; display: block; margin-bottom: 10px; }
-        .gift-text { font-size: 20px; color: #fff; letter-spacing: 1px; text-transform: uppercase; }
+        .gift-box { background: rgba(255, 77, 109, 0.15); border: 2px dashed #ff4d6d; padding: 30px; border-radius: 20px; margin-bottom: 40px; max-width: 500px; backdrop-filter: blur(10px); }
+        .gift-box h3 { color: #ff4d6d; font-size: 28px; margin-bottom: 10px; }
+        .gift-box .amount { font-size: 40px; color: #fff; font-weight: 900; display: block; margin: 10px 0; }
 
-        .cta-btn { display: inline-block; background: linear-gradient(135deg, #ffd700, #ff8c00); color: #1a0a2e; padding: 22px 60px; border-radius: 50px; font-size: 24px; font-weight: 900; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3); transition: 0.3s; text-decoration: none; }
-        .cta-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 50px rgba(255, 215, 0, 0.5); }
+        .cta-btn { display: inline-block; background: #ff4d6d; color: white; padding: 22px 60px; border-radius: 50px; font-size: 26px; font-weight: 900; text-decoration: none; text-transform: uppercase; box-shadow: 0 10px 40px rgba(255, 77, 109, 0.4); transition: 0.3s; }
+        .cta-btn:hover { background: #ff758f; transform: translateY(-5px); }
 
-        .footer { text-align: center; padding: 40px 20px; color: #606080; font-size: 14px; }
+        .footer { margin-top: 50px; color: rgba(255, 204, 213, 0.5); font-size: 14px; }
     </style>
 </head>
 <body>
 
 <a id="flp-bar" href="#" onclick="goToRegister(); return false;">
-    <span class="bar-text">🚀 FastListPro.com — Join The Elite Circle Of Ambitious Marketers</span>
+    <span class="bar-text">💝 VALENTINE'S SPECIAL: JOIN TODAY FOR 5,000 BONUS CREDITS! 💝</span>
 </a>
 
 <div class="hero">
-    <div class="badge">A Royal Welcome</div>
-    <h1>Advertising For<br>Ambitious Professionals</h1>
-    <p class="subtitle">Join the next generation of credit-based viral mailing. Reach engaged marketers, earn rewards, and scale your business.</p>
+    <div class="heart">❤️</div>
+    <h1>Will You Be Mine?</h1>
+    <p class="subtitle">Fall in love with marketing again. Reach real people and grow your business with FastListPro.</p>
     
-    <div class="gift-container">
-        <span class="gift-text">Special Welcome Gift:</span>
-        <span class="gift-amount">5,000 CREDITS</span>
-        <p style="color: #a0a0c0;">Claim your instant mailing credits when you join today!</p>
+    <div class="gift-box">
+        <h3>🎁 VALENTINE'S GIFT</h3>
+        <span class="amount">5,000 CREDITS</span>
+        <p>Join today and we'll add 5,000 Instant Mailing Credits to your account!</p>
     </div>
 
-    <a href="#" onclick="goToRegister(); return false;" class="cta-btn">Claim My 5,000 Credits</a>
+    <a href="#" onclick="goToRegister(); return false;" class="cta-btn">Claim My Gift Now</a>
     
     <div class="footer">
-        FastListPro — The Premium Advertising Network<br>© 2026. All rights reserved.
+        FastListPro — Advertising For Ambitious Professionals<br>© 2026 Valentine's Edition
     </div>
 </div>
 
