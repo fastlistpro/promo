@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastListPro - Valentine's Special</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background: #5d0a1a; color: white; text-align: center; }
+        .hero { background: linear-gradient(rgba(93, 10, 26, 0.8), rgba(93, 10, 26, 0.8)), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1000&q=80'); background-size: cover; padding: 100px 20px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .heart { font-size: 80px; color: #ff4d6d; margin-bottom: 20px; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        h1 { font-size: 50px; margin-bottom: 10px; color: #ffb3c1; }
+        p { font-size: 22px; max-width: 600px; margin-bottom: 30px; line-height: 1.5; }
+        .gift-box { background: rgba(255, 255, 255, 0.1); border: 2px dashed #ff4d6d; padding: 30px; border-radius: 20px; margin-bottom: 40px; }
+        .cta-button { background: #ff4d6d; color: white; padding: 20px 50px; border-radius: 50px; font-size: 24px; font-weight: bold; text-decoration: none; display: inline-block; box-shadow: 0 5px 20px rgba(255, 77, 109, 0.4); transition: 0.3s; }
+        .cta-button:hover { background: #ff758f; transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="heart">❤️</div>
+    <h1>Will You Be Mine?</h1>
+    <p>We're sharing the love at <strong>FastListPro</strong> this Valentine's Day. Join our community of ambitious marketers today and grab your holiday bonus!</p>
+    
+    <div class="gift-box">
+        <h3>🎁 VALENTINE'S GIFT:</h3>
+        <p>Sign up today and get <strong>1,000 Instant Credits</strong> to start mailing your offers immediately!</p>
+    </div>
+
+    <a href="#" onclick="goToRegister(); return false;" class="cta-button">Join & Claim Your Gift</a>
+</div>
+
+<script>
+function goToRegister(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const rid = urlParams.get('rid') || '';
+    const dest = "https://fastlistpro.com/auth?tab=signup&rid=" + rid;
+    window.top ? window.top.location.href = dest : window.location.href = dest;
+}
+</script>
+</body>
+</html>
