@@ -62,7 +62,10 @@ h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.08;margin-bottom
 .testimonials{position:relative;z-index:1;padding:80px 20px;background:#07040f}
 .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:960px;margin:0 auto}
 .testi-card{background:linear-gradient(145deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px 24px;position:relative}
-.testi-card::before{content:"\\201C";position:absolute;top:12px;left:16px;font-size:48px;color:rgba(255,215,0,0.2);font-family:Georgia,serif;line-height:1}
+
+/* FIXED QUOTATION SYMBOL BELOW */
+.testi-card::before{content:"\201C";position:absolute;top:12px;left:16px;font-size:48px;color:rgba(255,215,0,0.2);font-family:Georgia,serif;line-height:1}
+
 .testi-text{font-size:15px;color:#c4b5fd;line-height:1.7;margin-bottom:16px;padding-top:20px;font-style:italic}
 .testi-author{font-size:13px;color:#ffd700;font-weight:700;text-transform:uppercase;letter-spacing:1px}
 
@@ -98,9 +101,9 @@ h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.08;margin-bottom
   <p class="tagline">The safelist you loved is back — <strong>rebuilt from the ground up</strong> with powerful new tools, bigger rewards, and a community ready to help you <strong>grow your list faster than ever</strong>.</p>
   <a href="#REFURL#" class="cta-btn" onclick="goToRegister(); return false;">🚀 Join Free — Claim Your Spot</a>
   <div class="stats">
-    <div class="stat"><div class="stat-num">600+</div><div class="stat-label">Active Members</div></div>
+    <div class="stat"><div class="stat-num">8,600+</div><div class="stat-label">Active Members</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free to Join</div></div>
-    <div class="stat"><div class="stat-num">$50+</div><div class="stat-label">Monthly Prizes</div></div>
+    <div class="stat"><div class="stat-num">$500+</div><div class="stat-label">Monthly Prizes</div></div>
   </div>
 </section>
 
@@ -183,24 +186,21 @@ h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.08;margin-bottom
     c.appendChild(s);
   }
 })();
-</script>
 
-<script>
-  // Tracking Engine
-  const urlParams = new URLSearchParams(window.location.search);
-  const rid = urlParams.get('rid') || '1'; 
-  const finalUrl = "https://fastlistpro.com/?rid=" + rid;
+// Tracking Engine
+const urlParams = new URLSearchParams(window.location.search);
+const rid = urlParams.get('rid') || '1'; 
+const finalUrl = "https://fastlistpro.com/?rid=" + rid;
 
-  function goToRegister(){
-    window.location.href = finalUrl;
+function goToRegister(){
+  window.location.href = finalUrl;
+}
+
+document.querySelectorAll('a').forEach(link => {
+  if (link.getAttribute('href') === '#REFURL#') {
+    link.href = finalUrl;
   }
-
-  // Update static links
-  document.querySelectorAll('a').forEach(link => {
-    if (link.getAttribute('href') === '#REFURL#') {
-      link.href = finalUrl;
-    }
-  });
+});
 </script>
 
 </body>
