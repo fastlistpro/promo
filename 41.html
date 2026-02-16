@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FastListPro - Monthly Cash Referral Contest</title>
+<title>FastListPro - Monthly Cash Drawing</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:#0a0a1a;color:#e0e0e0;overflow-x:hidden}
@@ -14,10 +14,10 @@ body{font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:#0a0a1
 .badge{display:inline-block;background:linear-gradient(135deg,#ffd700,#ff8c00);color:#1a0a2e;padding:8px 24px;border-radius:50px;font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px}
 h1{font-size:clamp(28px,5vw,52px);font-weight:900;background:linear-gradient(135deg,#fff 30%,#ffd700 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;margin-bottom:12px}
 .subtitle{font-size:clamp(16px,2.5vw,22px);color:#b0b0d0;max-width:650px;margin:0 auto 30px;line-height:1.6}
-.prize-showcase{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:30px auto;max-width:700px}
-.prize-card{background:linear-gradient(145deg,rgba(255,215,0,0.1),rgba(255,140,0,0.05));border:2px solid rgba(255,215,0,0.3);border-radius:16px;padding:24px 20px;min-width:140px;flex:1;text-align:center;transition:transform 0.3s}
+.prize-showcase{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:30px auto;max-width:800px}
+.prize-card{background:linear-gradient(145deg,rgba(255,215,0,0.1),rgba(255,140,0,0.05));border:2px solid rgba(255,215,0,0.3);border-radius:16px;padding:20px 16px;min-width:120px;flex:1;text-align:center;transition:transform 0.3s}
 .prize-rank{font-size:14px;color:#ffd700;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-.prize-amount{font-size:clamp(32px,4vw,48px);font-weight:900;color:#ffd700;text-shadow:0 0 20px rgba(255,215,0,0.3)}
+.prize-amount{font-size:clamp(28px,3.5vw,42px);font-weight:900;color:#ffd700;text-shadow:0 0 20px rgba(255,215,0,0.3)}
 .prize-label{font-size:13px;color:#a0a0c0;margin-top:4px}
 .section{padding:50px 20px;max-width:900px;margin:0 auto}
 .section-title{font-size:clamp(22px,3.5vw,34px);font-weight:800;text-align:center;margin-bottom:12px;color:#fff}
@@ -43,12 +43,8 @@ h1{font-size:clamp(28px,5vw,52px);font-weight:900;background:linear-gradient(135
 </style>
 </head>
 <body>
-<a id="flp-relaunch-bar" href="https://fastlistpro.com/" target="_top" style="display:flex;position:fixed;top:0;left:0;width:100%;height:40px;background:linear-gradient(135deg,#1a0a2e,#0d1b3e);align-items:center;justify-content:center;z-index:999999;border-bottom:1px solid rgba(255,215,0,0.4);text-decoration:none;">
-    <span style="color:#ffd700;font-family:serif;font-size:13px;font-weight:600;letter-spacing:0.5px;">🚀 FastListPro.com Has Relaunched — New Features, Same Great Community!</span>
-</a>
-<style>body{margin-top:40px !important;}</style>
 
-<div class="bonus-strip">🎟️ 1 REFERRAL = 1 TICKET • BRING 5+ TO QUALIFY FOR THE CASH DRAWING!</div>
+<div class="bonus-strip">🎟️ 1 REFERRAL = 1 TICKET • 5 WINNERS DRAWN MONTHLY!</div>
 
 <div class="top-fix-bar">
     <button onclick="goToRegister()" class="cta-btn">🚀 Create My Free Account</button>
@@ -57,12 +53,14 @@ h1{font-size:clamp(28px,5vw,52px);font-weight:900;background:linear-gradient(135
 <div class="hero">
     <div class="badge">🏆 Monthly Cash Drawing</div>
     <h1>Refer Friends.<br>Earn Lottery Tickets.<br>Win Real Cash.</h1>
-    <p class="subtitle">Every single referral earns you a lottery ticket. Bring in at least 5 to qualify for the monthly cash drawing — then every extra ticket increases your odds of winning.</p>
+    <p class="subtitle">Every single referral earns you a lottery ticket. Bring in at least 5 to qualify for the monthly cash drawing — 5 winners are drawn each month!</p>
 
     <div class="prize-showcase">
-        <div class="prize-card"><div class="prize-rank">🥇 1st Place</div><div class="prize-amount">$50</div><div class="prize-label">Cash Prize</div></div>
-        <div class="prize-card"><div class="prize-rank">🥈 2nd Place</div><div class="prize-amount">$25</div><div class="prize-label">Cash Prize</div></div>
-        <div class="prize-card"><div class="prize-rank">🥉 3rd Place</div><div class="prize-amount">$10</div><div class="prize-label">Cash Prize</div></div>
+        <div class="prize-card"><div class="prize-rank">🥇 1st Place</div><div class="prize-amount">$10</div><div class="prize-label">Cash Prize</div></div>
+        <div class="prize-card"><div class="prize-rank">🥈 2nd Place</div><div class="prize-amount">$5</div><div class="prize-label">Cash Prize</div></div>
+        <div class="prize-card"><div class="prize-rank">🥉 3rd Place</div><div class="prize-amount">$3</div><div class="prize-label">Cash Prize</div></div>
+        <div class="prize-card"><div class="prize-rank">4th Place</div><div class="prize-amount">$2</div><div class="prize-label">Cash Prize</div></div>
+        <div class="prize-card"><div class="prize-rank">5th Place</div><div class="prize-amount">$1</div><div class="prize-label">Cash Prize</div></div>
     </div>
 </div>
 
@@ -73,22 +71,39 @@ h1{font-size:clamp(28px,5vw,52px);font-weight:900;background:linear-gradient(135
         <div class="mechanic-highlight">1 Referral = 1 Lottery Ticket</div>
         <div class="mechanic-highlight-purple">⚡ Minimum 5 Referrals to Qualify</div>
     </div>
+
+    <div class="ticket-visual">
+        <div class="ticket-example"><div class="ticket-refs">3 Referrals</div><div class="ticket-arrow">↓</div><div class="ticket-entries">3 Tickets</div><div class="ticket-label">❌ Not yet eligible</div></div>
+        <div class="ticket-example qualify"><div class="ticket-refs">5 Referrals</div><div class="ticket-arrow">↓</div><div class="ticket-entries">5 Tickets</div><div class="ticket-label">✅ Qualified!</div></div>
+        <div class="ticket-example qualify"><div class="ticket-refs">20 Referrals</div><div class="ticket-arrow">↓</div><div class="ticket-entries">20 Tickets</div><div class="ticket-label">🔥 4x the chances!</div></div>
+    </div>
+</div>
+
+<div class="how-it-works">
+    <h2 class="section-title">How It Works</h2>
+    <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-title">Join Free</div><div class="step-desc">Create your free account. Get your unique referral link instantly.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-title">Share Your Link</div><div class="step-desc">Use our banners and splash pages to promote.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-title">Earn Tickets</div><div class="step-desc">Each referral = 1 ticket. Get to 5 referrals to qualify.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-title">Win Cash</div><div class="step-desc">5 winners are drawn monthly. More tickets = better odds!</div></div>
+    </div>
 </div>
 
 <div class="cta-section">
-    <h2 class="section-title">The Drawing Happens Every Month</h2>
+    <h2 class="section-title">5 Winners Drawn Every Month</h2>
     <button onclick="goToRegister()" class="cta-btn">🚀 Create My Free Account</button>
+    <p style="margin-top:14px;font-size:14px;color:#a0a0c0">No credit card required • Instant access</p>
 </div>
 
 <div class="footer">FastListPro — Advertising For Ambitious Professionals<br>© 2026 FastListPro. All rights reserved.</div>
 
 <script>
-function goToRegister(){
+function goToRegister() {
     const urlParams = new URLSearchParams(window.location.search);
-    const rid = urlParams.get('rid') || '';
-    const dest = "https://fastlistpro.com/auth?tab=signup&rid=" + rid;
-    window.top ? window.top.location.href = dest : window.location.href = dest;
+    const refId = urlParams.get('rid') || urlParams.get('id') || '1';
+    window.location.assign("https://fastlistpro.com/auth?tab=signup&rid=" + refId);
 }
 </script>
+
 </body>
 </html>
