@@ -15,21 +15,21 @@
     <div id="root"></div>
 
     <script>
-      // This is the ONLY part I added - it waits for your page to load 
-      // then sticks the ?rid= from the URL onto your buttons.
-      function updateLinks() {
-        const params = new URLSearchParams(window.location.search);
-        const rid = params.get('rid') || '1';
+      // This function finds the 'rid' in the URL and attaches it to all links
+      function updateAffiliateLinks() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const rid = urlParams.get('rid') || '1'; 
+        
         document.querySelectorAll('a').forEach(link => {
           if (link.href.includes('fastlistpro.com') && !link.href.includes('rid=')) {
-            const joiner = link.href.includes('?') ? '&' : '?';
-            link.href = link.href + joiner + "rid=" + rid;
+            const separator = link.href.includes('?') ? '&' : '?';
+            link.href = link.href + separator + "rid=" + rid;
           }
         });
       }
 
-      // Watches for React to finish building the page
-      const observer = new MutationObserver(() => updateLinks());
+      // This part waits for the page to finish building before running the tracker
+      const observer = new MutationObserver(() => updateAffiliateLinks());
       observer.observe(document.body, { childList: true, subtree: true });
     </script>
   </body>
