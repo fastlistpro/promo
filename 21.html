@@ -92,16 +92,15 @@
   <script defer src="https://fastlistpro.com/~flock.js" data-proxy-url="https://fastlistpro.com/~api/analytics"></script></head>
 
   <body>
-    <div id="root"></div>
-    <script>
-      // THIS IS THE ONLY ADDITION
-      const urlParams = new URLSearchParams(window.location.search);
-      const rid = urlParams.get('rid') || '1'; 
-      document.querySelectorAll('a').forEach(link => {
-        if (link.href.includes('fastlistpro.com')) {
-          link.href = "https://fastlistpro.com/?rid=" + rid;
-        }
-      });
-    </script>
+  <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const rid = urlParams.get('rid') || '1'; 
+  document.querySelectorAll('a').forEach(link => {
+    // This looks for the placeholder you have in your HTML
+    if (link.getAttribute('href') === '#REFURL#') {
+      link.href = "https://fastlistpro.com/?rid=" + rid;
+    }
+  });
+</script>
   </body>
 </html>
