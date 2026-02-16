@@ -89,10 +89,8 @@ h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.08;margin-bottom
 </head>
 <body>
 
-<!-- Starfield -->
 <div class="stars" id="stars"></div>
 
-<!-- ════════════ HERO ════════════ -->
 <section class="hero">
   <div class="crown">👑</div>
   <div class="relaunch-badge">✦ Official Relaunch ✦</div>
@@ -106,7 +104,6 @@ h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.08;margin-bottom
   </div>
 </section>
 
-<!-- ════════════ FEATURES ════════════ -->
 <section class="features">
   <h2 class="features-title">Everything You Need to Grow</h2>
   <p class="features-sub">We didn't just rebuild — we reimagined what a safelist can be.</p>
@@ -144,12 +141,10 @@ h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.08;margin-bottom
   </div>
 </section>
 
-<!-- ════════════ RIBBON ════════════ -->
 <section class="ribbon">
   <p class="ribbon-text">"FastListPro isn't just a safelist — it's a <em>community of marketers</em> helping each other succeed. The relaunch has made it <em>better than ever</em>."</p>
 </section>
 
-<!-- ════════════ TESTIMONIALS ════════════ -->
 <section class="testimonials">
   <div class="testi-grid">
     <div class="testi-card">
@@ -167,7 +162,6 @@ h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.08;margin-bottom
   </div>
 </section>
 
-<!-- ════════════ BOTTOM CTA ════════════ -->
 <section class="bottom-cta">
   <div class="urgency">🔥 Limited-Time Relaunch Bonuses Available</div>
   <h2>Don't Miss the Relaunch Wave</h2>
@@ -175,12 +169,10 @@ h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.08;margin-bottom
   <a href="#REFURL#" class="cta-btn" onclick="goToRegister(); return false;">⚡ Create My Free Account</a>
 </section>
 
-<!-- ════════════ FOOTER ════════════ -->
 <div class="footer">
   <p>© 2025 <a href="#REFURL#">FastListPro.com</a> — All rights reserved. Join the relaunch today.</p>
 </div>
 
-<!-- ── Starfield generator ── -->
 <script>
 (function(){
   var c=document.getElementById("stars");
@@ -194,7 +186,22 @@ h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.08;margin-bottom
 </script>
 
 <script>
-function goToRegister(){window.location.href="#REFURL#";}
+  // Affiliate Link Handling
+  const urlParams = new URLSearchParams(window.location.search);
+  const rid = urlParams.get('rid') || '1'; 
+  const finalUrl = "https://fastlistpro.com/?rid=" + rid;
+
+  // Handle the Register Function
+  function goToRegister(){
+    window.location.href = finalUrl;
+  }
+
+  // Swap any #REFURL# links in the HTML
+  document.querySelectorAll('a').forEach(link => {
+    if (link.getAttribute('href') === '#REFURL#') {
+      link.href = finalUrl;
+    }
+  });
 </script>
 
 </body>
