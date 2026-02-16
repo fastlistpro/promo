@@ -3,10 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <base href="https://fastlistpro.github.io/promo/">
+
     <title>FastListPro - Advertising For Ambitious Professionals</title>
     
-    <script type="module" crossorigin src="https://fastlistpro.github.io/promo/assets/index-BO-SYMY1.js"></script>
-    <link rel="stylesheet" crossorigin href="https://fastlistpro.github.io/promo/assets/index-PGk96hdV.css">
+    <script type="module" crossorigin src="assets/index-BO-SYMY1.js"></script>
+    <link rel="stylesheet" crossorigin href="assets/index-PGk96hdV.css">
     
     <script defer src="https://fastlistpro.com/~flock.js" data-proxy-url="https://fastlistpro.com/~api/analytics"></script>
   </head>
@@ -20,6 +23,7 @@
         const rid = urlParams.get('rid') || '1';
         
         document.querySelectorAll('a').forEach(link => {
+          // Only touch links that point to your main domain
           if (link.href.includes('fastlistpro.com') && !link.href.includes('rid=')) {
             const separator = link.href.includes('?') ? '&' : '?';
             link.href = link.href + separator + "rid=" + rid;
@@ -27,6 +31,7 @@
         });
       }
 
+      // React takes a second to load; this watches the page and updates links the moment they appear
       const observer = new MutationObserver(() => updateReferralLinks());
       observer.observe(document.body, { childList: true, subtree: true });
       window.addEventListener('load', updateReferralLinks);
