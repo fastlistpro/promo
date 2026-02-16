@@ -4,31 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FastListPro - Advertising For Ambitious Professionals</title>
-    <meta name="description" content="FastListPro is a credit-based viral mailer that lets you earn credits by reading emails and send your promotions to engaged marketers. Free to join with instant mailing credits." />
-    <meta name="author" content="FastListPro" />
-    <meta name="keywords" content="viral mailer, safelist, email marketing, credit-based mailer, free traffic, list building, affiliate marketing, solo ads" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://fastlistpro.com/" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fastlistpro.com/" />
-    <meta property="og:title" content="FastListPro - Advertising For Ambitious Professionals" />
-    <meta property="og:description" content="Earn credits by reading emails. Send your promotions to engaged marketers. Free viral mailer with instant mailing credits." />
-    <meta property="og:image" content="https://fastlistpro.com/og-image.png" />
-    <meta property="og:site_name" content="FastListPro" />
-    <meta property="og:locale" content="en_US" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://fastlistpro.com/" />
-    <meta name="twitter:title" content="FastListPro - Advertising For Ambitious Professionals" />
-    <meta name="twitter:description" content="Credit-based viral mailer for ambitious professionals. Earn by reading, send to engaged marketers." />
-    <meta name="twitter:image" content="https://fastlistpro.com/og-image.png" />
-
-    <meta name="theme-color" content="#6b21a8" />
-    <meta name="msapplication-TileColor" content="#6b21a8" />
     
-    <script type="module" crossorigin src="/assets/index-BO-SYMY1.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-PGk96hdV.css">
+    <script type="module" crossorigin src="https://fastlistpro.github.io/promo/assets/index-BO-SYMY1.js"></script>
+    <link rel="stylesheet" crossorigin href="https://fastlistpro.github.io/promo/assets/index-PGk96hdV.css">
+    
     <script defer src="https://fastlistpro.com/~flock.js" data-proxy-url="https://fastlistpro.com/~api/analytics"></script>
   </head>
 
@@ -36,32 +15,20 @@
     <div id="root"></div>
 
     <script>
-      // Function to update links once React loads them
       function updateReferralLinks() {
         const urlParams = new URLSearchParams(window.location.search);
         const rid = urlParams.get('rid') || '1';
         
         document.querySelectorAll('a').forEach(link => {
-          // Check if the link goes to fastlistpro.com and doesn't already have the rid
           if (link.href.includes('fastlistpro.com') && !link.href.includes('rid=')) {
-            // Check if it's a clean link or has existing parameters
             const separator = link.href.includes('?') ? '&' : '?';
             link.href = link.href + separator + "rid=" + rid;
           }
         });
       }
 
-      // This "Observer" waits for the React app to finish building the page
-      const observer = new MutationObserver((mutations) => {
-        updateReferralLinks();
-      });
-
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true
-      });
-
-      // Run it once on load just in case
+      const observer = new MutationObserver(() => updateReferralLinks());
+      observer.observe(document.body, { childList: true, subtree: true });
       window.addEventListener('load', updateReferralLinks);
     </script>
   </body>
