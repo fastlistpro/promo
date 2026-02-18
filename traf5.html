@@ -31,25 +31,23 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 24px;
-            padding: 40px 20px;
+            padding: 60px 20px 40px 20px; /* Added top padding for logo space */
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             position: relative;
         }
-        /* Top Left Graphic Placeholder */
+        
+        /* Top Left Logo Area */
         .logo-area {
             position: absolute;
-            top: 20px;
+            top: 15px;
             left: 20px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            width: 130px; /* Sized for the Dev Hobbins logo */
+            z-index: 10;
+        }
+        .logo-area img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3));
         }
         
         header { text-align: center; margin-top: 20px; }
@@ -77,7 +75,7 @@
             font-weight: 700;
             margin-bottom: 10px;
         }
-        .btn-title { font-size: 1.2rem; display: flex; flex-direction: column; }
+        .btn-title { font-size: 1.2rem; display: flex; flex-direction: column; text-align: left; }
         .btn-title span { font-size: 0.8rem; font-weight: 400; color: #94a3b8; }
 
         /* Promo Code Badge */
@@ -118,7 +116,9 @@
 <body>
 
 <div class="container">
-    <div class="logo-area">T5</div>
+    <div class="logo-area">
+        <img src="devlogo.png" alt="Dev Hobbins">
+    </div>
     
     <header>
         <h1>THE TRAFFIC <span class="highlight">5</span></h1>
@@ -143,7 +143,7 @@
         </div>
 
         <div class="card">
-            <a href="mailigenics.com/r/1" class="btn" target="_blank">
+            <a href="https://mailigenics.com/r/1" class="btn" target="_blank">
                 <div class="btn-title">MAILIGENICS <span>Premium Quality Leads</span></div>
                 <div class="action-btn">JOIN</div>
             </a>
@@ -151,7 +151,7 @@
         </div>
 
         <div class="card">
-            <a href="suresendmailer.com/r/1" class="btn" target="_blank">
+            <a href="https://suresendmailer.com/r/1" class="btn" target="_blank">
                 <div class="btn-title">SURESEND MAILER <span>Rock-Solid Delivery</span></div>
                 <div class="action-btn">JOIN</div>
             </a>
@@ -173,7 +173,7 @@
     </div>
 
     <div class="footer">
-        © 2026 Admin Multi-Network Access
+        © 2026 Dev Hobbins - Traffic 5 Network
     </div>
 </div>
 
