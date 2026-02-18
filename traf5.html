@@ -12,6 +12,7 @@
             --dark: #0f172a;
             --glass: rgba(255, 255, 255, 0.1);
             --gold: #fbbf24;
+            --success: #22c55e;
         }
         body {
             margin: 0;
@@ -31,17 +32,16 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 24px;
-            padding: 60px 20px 40px 20px; /* Added top padding for logo space */
+            padding: 60px 20px 40px 20px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             position: relative;
         }
         
-        /* Top Left Logo Area */
         .logo-area {
             position: absolute;
             top: 15px;
             left: 20px;
-            width: 130px; /* Sized for the Dev Hobbins logo */
+            width: 130px;
             z-index: 10;
         }
         .logo-area img {
@@ -78,18 +78,21 @@
         .btn-title { font-size: 1.2rem; display: flex; flex-direction: column; text-align: left; }
         .btn-title span { font-size: 0.8rem; font-weight: 400; color: #94a3b8; }
 
-        /* Promo Code Badge */
         .promo-badge {
             display: inline-block;
             background: rgba(251, 191, 36, 0.1);
             border: 1px dashed var(--gold);
             color: var(--gold);
-            padding: 5px 12px;
+            padding: 6px 12px;
             border-radius: 8px;
             font-size: 0.85rem;
             font-family: monospace;
             font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
         }
+        .promo-badge:hover { background: rgba(251, 191, 36, 0.2); }
+        .promo-badge.copied { border-color: var(--success); color: var(--success); background: rgba(34, 197, 94, 0.1); }
         
         .action-btn {
             background: var(--primary);
@@ -131,7 +134,7 @@
                 <div class="btn-title">FASTLISTPRO <span>High-Velocity Mailing</span></div>
                 <div class="action-btn">JOIN</div>
             </a>
-            <div class="promo-badge">CODE: RELAUNCH</div>
+            <div class="promo-badge" onclick="copyCode(this, 'RELAUNCH')">PROMO: RELAUNCH</div>
         </div>
         
         <div class="card">
@@ -139,7 +142,7 @@
                 <div class="btn-title">BOOSTLOOPE <span>Viral Traffic Loops</span></div>
                 <div class="action-btn">JOIN</div>
             </a>
-            <div class="promo-badge">CODE: LAUNCH100</div>
+            <div class="promo-badge" onclick="copyCode(this, 'LAUNCH100')">PROMO: LAUNCH100</div>
         </div>
 
         <div class="card">
@@ -147,7 +150,7 @@
                 <div class="btn-title">MAILIGENICS <span>Premium Quality Leads</span></div>
                 <div class="action-btn">JOIN</div>
             </a>
-            <div class="promo-badge">CODE: LAUNCH2026</div>
+            <div class="promo-badge" onclick="copyCode(this, 'LAUNCH2026')">PROMO: LAUNCH2026</div>
         </div>
 
         <div class="card">
@@ -155,7 +158,7 @@
                 <div class="btn-title">SURESEND MAILER <span>Rock-Solid Delivery</span></div>
                 <div class="action-btn">JOIN</div>
             </a>
-            <div class="promo-badge">CODE: LAUNCH2026</div>
+            <div class="promo-badge" onclick="copyCode(this, 'LAUNCH2026')">PROMO: LAUNCH2026</div>
         </div>
 
         <div class="card">
@@ -163,7 +166,7 @@
                 <div class="btn-title">POSTFREE4LIFE <span>Permanent Ad Exposure</span></div>
                 <div class="action-btn">JOIN</div>
             </a>
-            <div class="promo-badge">CODE: zombiefriendly</div>
+            <div class="promo-badge" onclick="copyCode(this, 'zombiefriendly')">PROMO: zombiefriendly</div>
         </div>
     </div>
 
@@ -176,6 +179,20 @@
         © 2026 Dev Hobbins - Traffic 5 Network
     </div>
 </div>
+
+<script>
+function copyCode(element, text) {
+    navigator.clipboard.writeText(text).then(() => {
+        const originalText = element.innerText;
+        element.innerText = 'COPIED!';
+        element.classList.add('copied');
+        setTimeout(() => {
+            element.innerText = originalText;
+            element.classList.remove('copied');
+        }, 2000);
+    });
+}
+</script>
 
 </body>
 </html>
