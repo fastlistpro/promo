@@ -37,7 +37,7 @@
             position: relative;
         }
         
-        /* The Logo Fix: "mix-blend-mode" makes the white background disappear */
+        /* THE LOGO FIX: This makes the solid background blend in */
         .logo-area {
             position: absolute;
             top: 20px;
@@ -48,8 +48,9 @@
         .logo-area img {
             width: 100%;
             height: auto;
-            mix-blend-mode: screen; /* This hides the dark/black background of an image */
-            filter: brightness(1.2); /* Adjusts the "pop" of the brand name */
+            /* If your logo background is DARK, use 'screen'. If it is LIGHT, use 'multiply' */
+            mix-blend-mode: multiply; 
+            filter: contrast(1.1) brightness(1.1);
         }
         
         header { text-align: center; margin-top: 10px; }
