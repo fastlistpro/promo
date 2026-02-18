@@ -38,7 +38,6 @@
             text-align: center;
         }
         
-        /* The Logo Badge that works with your file */
         .logo-badge {
             display: inline-block;
             background: white;
@@ -71,7 +70,6 @@
             transform: translateY(-4px); 
             background: rgba(255,255,255,0.08); 
             border-color: var(--secondary);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         .btn-link {
@@ -92,7 +90,6 @@
             border-radius: 10px;
             font-weight: 700;
             font-size: 0.85rem;
-            box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
         }
 
         .promo-area {
@@ -104,14 +101,47 @@
             border: 1px dashed rgba(251, 191, 36, 0.3);
             cursor: pointer;
             justify-content: space-between;
-            transition: 0.2s;
         }
-        .promo-area:hover { border-color: var(--gold); }
         .promo-label { font-size: 0.75rem; color: #94a3b8; font-family: monospace; }
         .promo-code { font-weight: 700; color: var(--gold); font-family: monospace; }
 
+        /* NEW MEMBER SPOTLIGHT SECTION */
+        .spotlight {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(34, 197, 94, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            text-align: left;
+        }
+        .spotlight-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: var(--success);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        .quote {
+            font-style: italic;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .spotlight-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-bottom: 1px solid var(--secondary);
+        }
+
         .blueprint-alert {
-            margin-top: 35px;
+            margin-top: 30px;
             padding: 15px;
             background: rgba(0, 212, 255, 0.05);
             border-radius: 12px;
@@ -205,6 +235,12 @@
                 <span class="promo-code">zombiefriendly</span>
             </div>
         </div>
+    </div>
+
+    <div class="spotlight">
+        <div class="spotlight-header">⚡ Member Spotlight: Roger (ceocrow)</div>
+        <span class="quote">"The quality of the leads I generate through FastListPro is higher than those I get from other advertising platforms. These are people genuinely interested in what I have to offer."</span>
+        <a href="https://bitcrowcom.wordpress.com/2026/02/16/fastlistpro-fast-and-professional/" target="_blank" class="spotlight-link">Read Full Review →</a>
     </div>
 
     <div class="blueprint-alert">
