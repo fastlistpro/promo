@@ -11,6 +11,7 @@
             --secondary: #00d4ff;
             --dark: #0f172a;
             --glass: rgba(255, 255, 255, 0.1);
+            --gold: #fbbf24;
         }
         body {
             margin: 0;
@@ -24,83 +25,146 @@
             padding: 20px;
         }
         .container {
-            max-width: 600px;
+            max-width: 650px;
             width: 100%;
-            text-align: center;
             background: var(--glass);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 24px;
             padding: 40px 20px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
         }
+        /* Top Left Graphic Placeholder */
+        .logo-area {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        header { text-align: center; margin-top: 20px; }
         h1 { font-weight: 900; font-size: 2.5rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: -1px; }
         .highlight { color: var(--primary); }
         p.subtitle { font-size: 1.1rem; color: #94a3b8; margin-bottom: 30px; }
         
-        .link-grid { display: flex; flex-direction: column; gap: 15px; }
+        .link-grid { display: flex; flex-direction: column; gap: 20px; }
         
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+        .card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.08); border-color: var(--secondary); }
+
         .btn {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 18px 25px;
-            border-radius: 12px;
             color: white;
             text-decoration: none;
             font-weight: 700;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 10px;
         }
-        .btn:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
-            border-color: transparent;
+        .btn-title { font-size: 1.2rem; display: flex; flex-direction: column; }
+        .btn-title span { font-size: 0.8rem; font-weight: 400; color: #94a3b8; }
+
+        /* Promo Code Badge */
+        .promo-badge {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px dashed var(--gold);
+            color: var(--gold);
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-family: monospace;
+            font-weight: bold;
         }
-        .btn span { font-size: 0.9rem; font-weight: 400; opacity: 0.8; }
         
+        .action-btn {
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
         .timer-box {
             margin-top: 30px;
             padding: 15px;
             border: 1px dashed var(--secondary);
             border-radius: 12px;
             background: rgba(0, 212, 255, 0.05);
+            text-align: center;
         }
         .timer-box b { color: var(--secondary); }
-        
-        .footer { margin-top: 30px; font-size: 0.8rem; color: #64748b; }
+        .footer { margin-top: 30px; font-size: 0.8rem; color: #64748b; text-align: center; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>THE TRAFFIC <span class="highlight">5</span></h1>
-    <p class="subtitle">Dominating the Inbox. Saturating the Web.</p>
+    <div class="logo-area">T5</div>
+    
+    <header>
+        <h1>THE TRAFFIC <span class="highlight">5</span></h1>
+        <p class="subtitle">Your Multi-Site Command Center</p>
+    </header>
 
     <div class="link-grid">
-        <a href="https://fastlistpro.com/?rid=2" class="btn" target="_blank">
-            FASTLISTPRO <span>High-Velocity Mailing</span>
-        </a>
+        <div class="card">
+            <a href="https://fastlistpro.com/?rid=2" class="btn" target="_blank">
+                <div class="btn-title">FASTLISTPRO <span>High-Velocity Mailing</span></div>
+                <div class="action-btn">JOIN</div>
+            </a>
+            <div class="promo-badge">CODE: RELAUNCH</div>
+        </div>
         
-        <a href="https://boostloope.com/?ref=BL63275817" class="btn" target="_blank">
-            BOOSTLOOPE <span>Viral Traffic Loops</span>
-        </a>
+        <div class="card">
+            <a href="https://boostloope.com/?ref=BL63275817" class="btn" target="_blank">
+                <div class="btn-title">BOOSTLOOPE <span>Viral Traffic Loops</span></div>
+                <div class="action-btn">JOIN</div>
+            </a>
+            <div class="promo-badge">CODE: LAUNCH100</div>
+        </div>
 
-        <a href="mailigenics.com/r/1" class="btn" target="_blank">
-            MAILIGENICS <span>Premium Quality Leads</span>
-        </a>
+        <div class="card">
+            <a href="mailigenics.com/r/1" class="btn" target="_blank">
+                <div class="btn-title">MAILIGENICS <span>Premium Quality Leads</span></div>
+                <div class="action-btn">JOIN</div>
+            </a>
+            <div class="promo-badge">CODE: LAUNCH2026</div>
+        </div>
 
-        <a href="suresendmailer.com/r/1" class="btn" target="_blank">
-            SURESEND MAILER <span>Rock-Solid Delivery</span>
-        </a>
+        <div class="card">
+            <a href="suresendmailer.com/r/1" class="btn" target="_blank">
+                <div class="btn-title">SURESEND MAILER <span>Rock-Solid Delivery</span></div>
+                <div class="action-btn">JOIN</div>
+            </a>
+            <div class="promo-badge">CODE: LAUNCH2026</div>
+        </div>
 
-        <a href="https://postfree4life.com/splashpage.php?id=7&r=Clicks2" class="btn" target="_blank">
-            POSTFREE4LIFE <span>Permanent Ad Exposure</span>
-        </a>
+        <div class="card">
+            <a href="https://postfree4life.com/splashpage.php?id=7&r=Clicks2" class="btn" target="_blank">
+                <div class="btn-title">POSTFREE4LIFE <span>Permanent Ad Exposure</span></div>
+                <div class="action-btn">JOIN</div>
+            </a>
+            <div class="promo-badge">CODE: zombiefriendly</div>
+        </div>
     </div>
 
     <div class="timer-box">
