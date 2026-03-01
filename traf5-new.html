@@ -11,14 +11,17 @@
 :root{
     --primary:#ff4d4d;
     --secondary:#00d4ff;
-    --gold:#fbbf24;
+    --dark-card: rgba(255,255,255,0.06);
 }
+
+* { box-sizing: border-box; }
 
 body{
     margin:0;
-    padding:0; /* Removed padding so header can reach the top */
+    padding:0;
     font-family:'Inter',sans-serif;
-    background:radial-gradient(circle at top right,#1e293b,#0f172a);
+    background: #0f172a;
+    background: radial-gradient(circle at top right,#1e293b,#0f172a);
     color:white;
     display:flex;
     justify-content:center;
@@ -29,106 +32,111 @@ body{
     width:100%;
 }
 
+/* HEADER - CLEARS TO THE TOP */
 .header{
     text-align:center;
-    background: rgba(0,0,0,0.2);
-    padding: 40px 20px; /* Padding inside the header, but header hits the top */
-    margin-top: 0;
-    margin-bottom:30px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.4);
+    margin: 0;
+    padding: 60px 20px;
+    border-bottom: 2px solid var(--primary);
 }
 
 h1{
     margin:0;
-    font-size:3rem;
+    font-size:clamp(2rem, 10vw, 3.5rem);
     font-weight:900;
     text-transform:uppercase;
+    letter-spacing: -1px;
 }
 
 .highlight{color:var(--primary);}
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:20px;
-    padding: 0 20px;
+    padding: 40px 20px;
 }
 
 .card{
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:16px;
-    padding:18px;
+    background: var(--dark-card);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 25px;
     text-align: center;
-}
-
-.site-title{font-weight:800; margin-bottom: 12px;}
-
-.join-btn{
-    display:inline-block;
-    background:var(--primary);
-    padding:10px 20px;
-    border-radius:8px;
-    text-decoration:none;
-    color:white;
-    font-weight:700;
-    font-size:.85rem;
     transition: transform 0.2s;
 }
 
-.join-btn:hover { transform: scale(1.05); }
+.card:hover { transform: translateY(-5px); border-color: var(--secondary); }
 
-/* Testimonial Link */
-.testimonial-link {
+.site-title{ font-weight:800; font-size: 1.2rem; margin-bottom: 15px; }
+
+.join-btn{
+    display:block;
+    background:var(--primary);
+    padding:12px;
+    border-radius:6px;
+    text-decoration:none;
+    color:white;
+    font-weight:900;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* TESTIMONIAL LINK */
+.testimonial-wrapper {
     text-decoration: none;
-    color: inherit;
     display: block;
-    margin: 30px 20px;
+    margin: 0 20px 40px 20px;
 }
 
 .sidebar{
-    background:rgba(34,197,94,0.08);
-    border: 1px solid rgba(34,197,94,0.3);
-    border-radius:16px;
-    padding:20px;
-    transition: background 0.3s;
-}
-
-.sidebar:hover { background:rgba(34,197,94,0.15); }
-
-/* Visual Countdown Timer */
-.countdown-container {
-    margin: 40px 20px;
-    padding: 30px;
-    background: rgba(0, 212, 255, 0.05);
-    border: 2px solid var(--secondary);
-    border-radius: 20px;
+    background: rgba(34,197,94,0.1);
+    border: 1px solid #22c55e;
+    border-radius: 12px;
+    padding: 25px;
+    color: #f8fafc;
     text-align: center;
+    font-style: italic;
+    line-height: 1.6;
 }
 
-.countdown-label {
-    display: block;
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
+/* VISUAL COUNTDOWN TIMER */
+.timer-box {
+    margin: 20px;
+    background: #000;
+    border: 3px solid var(--secondary);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.timer-label {
     color: var(--secondary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    display: block;
 }
 
-.countdown-digits {
+.timer-display {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: clamp(1.5rem, 5vw, 3rem);
     font-weight: 900;
-    font-size: 2rem;
-    font-family: monospace;
+    color: #fff;
+    text-shadow: 0 0 10px var(--secondary);
 }
 
 .footer{
     text-align:center;
-    padding: 40px 20px;
-    font-size:.75rem;
+    padding: 40px;
+    font-size: 0.8rem;
     color:#475569;
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
@@ -138,47 +146,28 @@ h1{
     </div>
 
     <div class="grid">
-        <div class="card">
-            <div class="site-title">FASTLISTPRO</div>
-            <a class="join-btn" href="https://fastlistpro.com/?rid=2" target="_blank">JOIN</a>
-        </div>
-
-        <div class="card">
-            <div class="site-title">BOOSTLOOPE</div>
-            <a class="join-btn" href="https://boostloope.com/?ref=BL63275817" target="_blank">JOIN</a>
-        </div>
-
-        <div class="card">
-            <div class="site-title">MAILIGENICS</div>
-            <a class="join-btn" href="https://mailigenics.com/r/1" target="_blank">JOIN</a>
-        </div>
-
-        <div class="card">
-            <div class="site-title">SURE SEND MAILER</div>
-            <a class="join-btn" href="https://suresendmailer.com/r/1" target="_blank">JOIN</a>
-        </div>
-
-        <div class="card">
-            <div class="site-title">POSTFREE4LIFE</div>
-            <a class="join-btn" href="https://postfree4life.com/splashpage.php?id=7&r=Clicks2" target="_blank">JOIN</a>
-        </div>
-
+        <div class="card"><div class="site-title">FASTLISTPRO</div><a class="join-btn" href="https://fastlistpro.com/?rid=2" target="_blank">JOIN</a></div>
+        <div class="card"><div class="site-title">BOOSTLOOPE</div><a class="join-btn" href="https://boostloope.com/?ref=BL63275817" target="_blank">JOIN</a></div>
+        <div class="card"><div class="site-title">MAILIGENICS</div><a class="join-btn" href="https://mailigenics.com/r/1" target="_blank">JOIN</a></div>
+        <div class="card"><div class="site-title">SURE SEND MAILER</div><a class="join-btn" href="https://suresendmailer.com/r/1" target="_blank">JOIN</a></div>
+        <div class="card"><div class="site-title">POSTFREE4LIFE</div><a class="join-btn" href="https://postfree4life.com/splashpage.php?id=7&r=Clicks2" target="_blank">JOIN</a></div>
+        
         <div class="card">
             <div class="site-title">TRAFFICSTADIUM</div>
             <a class="join-btn" href="https://trafficstadium.com/?ref=gridiron" target="_blank">JOIN</a>
         </div>
     </div>
 
-    <a href="https://fastlistpro.com/?rid=2" class="testimonial-link" target="_blank">
+    <a href="https://fastlistpro.com/?rid=2" target="_blank" class="testimonial-wrapper">
         <div class="sidebar">
-            ⚡ <strong>Member Case Study — Roger (ceocrow):</strong><br>
+            <strong>⚡ Member Case Study — Roger (ceocrow):</strong><br>
             "The quality of the leads I generate through FastListPro is higher than those I get from other advertising platforms."
         </div>
     </a>
 
-    <div class="countdown-container">
-        <span class="countdown-label">TRAFFICSTADIUM LAUNCHING IN:</span>
-        <div class="countdown-digits" id="countdown">00d 00h 00m 00s</div>
+    <div class="timer-box">
+        <span class="timer-label">TRAFFICSTADIUM LAUNCH COUNTDOWN</span>
+        <div class="timer-display" id="countdown">00:00:00:00</div>
     </div>
 
     <div class="footer">
@@ -188,28 +177,31 @@ h1{
 </div>
 
 <script>
-const launchDate = new Date("March 9, 2026 00:00:00").getTime();
+const targetDate = new Date("March 9, 2026 00:00:00").getTime();
 
-function updateTimer() {
+function runTimer() {
     const now = new Date().getTime();
-    const distance = launchDate - now;
+    const diff = targetDate - now;
 
-    if (distance < 0) {
+    if (diff < 0) {
         document.getElementById("countdown").innerHTML = "WE ARE LIVE!";
         return;
     }
 
-    const days = Math.floor(distance / (1000*60*60*24));
-    const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
-    const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
-    const seconds = Math.floor((distance % (1000*60))/1000);
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+    // Formats numbers to always show two digits
+    const pad = (num) => String(num).padStart(2, '0');
 
     document.getElementById("countdown").innerHTML = 
-        days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+        `${pad(d)}d : ${pad(h)}h : ${pad(m)}m : ${pad(s)}s`;
 }
 
-setInterval(updateTimer, 1000);
-updateTimer(); // Initial call
+setInterval(runTimer, 1000);
+runTimer();
 </script>
 
 </body>
