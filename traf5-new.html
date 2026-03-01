@@ -3,182 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Traffic 5 Command Center</title>
-
+<title>The Traffic 6 Command Center</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-
 <style>
-:root {
-    --primary:#ff4d4d;
-    --secondary:#00d4ff;
-    --gold:#fbbf24;
-    --success:#22c55e;
-    --purple:#a78bfa;
-    --bg:#0f172a;
-}
-
-body{
-    margin:0;
-    font-family:'Inter',sans-serif;
-    background:radial-gradient(circle at top right,#1e293b,#0f172a);
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    padding:20px;
-}
-
-.container{
-    max-width:1000px;
-    width:100%;
-}
-
-.header{
-    text-align:center;
-    margin-bottom:30px;
-}
-
-h1{
-    margin:0;
-    font-size:2.5rem;
-    font-weight:900;
-    text-transform:uppercase;
-}
-
+:root{--primary:#ff4d4d;--secondary:#00d4ff;--gold:#fbbf24;}
+body{margin:0;font-family:'Inter',sans-serif;background:radial-gradient(circle at top right,#1e293b,#0f172a);color:white;display:flex;justify-content:center;padding:20px;}
+.container{max-width:1000px;width:100%;}
+.header{text-align:center;margin-bottom:30px;}
+h1{margin:0;font-size:2.5rem;font-weight:900;text-transform:uppercase;}
 .highlight{color:var(--primary);}
-
-.subtitle{
-    color:#94a3b8;
-    margin-top:8px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:16px;
-    padding:18px;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-    border-color:var(--secondary);
-}
-
-.site-title{
-    font-weight:800;
-    font-size:1.1rem;
-}
-
-.site-tag{
-    font-size:.75rem;
-    color:#94a3b8;
-    margin-bottom:12px;
-}
-
-.join-btn{
-    display:inline-block;
-    background:var(--primary);
-    color:white;
-    text-decoration:none;
-    padding:8px 14px;
-    border-radius:8px;
-    font-weight:700;
-    font-size:.8rem;
-}
-
-.countdown{
-    margin-top:40px;
-    text-align:center;
-    font-weight:700;
-    color:var(--secondary);
-    font-size:1.1rem;
-}
-
-.footer{
-    text-align:center;
-    margin-top:30px;
-    font-size:.75rem;
-    color:#475569;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+.card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:18px;}
+.site-title{font-weight:800;}
+.join-btn{display:inline-block;margin-top:10px;background:var(--primary);padding:8px 14px;border-radius:8px;text-decoration:none;color:white;font-weight:700;font-size:.8rem;}
+.sidebar{margin-top:30px;background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.2);border-radius:16px;padding:18px;}
+.countdown{margin-top:40px;text-align:center;font-weight:900;font-size:1.2rem;color:var(--secondary);}
+.footer{text-align:center;margin-top:30px;font-size:.75rem;color:#475569;}
 </style>
 </head>
-
 <body>
 
 <div class="container">
+    <div class="header">
+        <h1>THE TRAFFIC <span class="highlight">6</span></h1>
+    </div>
 
-<div class="header">
-<h1>THE TRAFFIC <span class="highlight">5</span></h1>
-<div class="subtitle">Personal Strategic Command Center</div>
-</div>
+    <div class="grid">
+        <div class="card"><div class="site-title">FASTLISTPRO</div><a class="join-btn" href="https://fastlistpro.com/?rid=2" target="_blank">JOIN</a></div>
+        <div class="card"><div class="site-title">BOOSTLOOPE</div><a class="join-btn" href="https://boostloope.com/?ref=BL63275817" target="_blank">JOIN</a></div>
+        <div class="card"><div class="site-title">MAILIGENICS</div><a class="join-btn" href="https://mailigenics.com/r/1" target="_blank">JOIN</a></div>
+        <div class="card"><div class="site-title">SURE SEND MAILER</div><a class="join-btn" href="https://suresendmailer.com/r/1" target="_blank">JOIN</a></div>
+        <div class="card"><div class="site-title">POSTFREE4LIFE</div><a class="join-btn" href="https://postfree4life.com/splashpage.php?id=7&r=Clicks2" target="_blank">JOIN</a></div>
+        <div class="card"><div class="site-title">TRAFFICSTADIUM</div><a class="join-btn" href="https://trafficstadium.com" target="_blank">JOIN</a></div>
+    </div> <div class="sidebar">
+        ⚡ Member Case Study — Roger (ceocrow):
+        "The quality of the leads I generate through FastListPro is higher than those I get from other advertising platforms."
+    </div>
 
-<div class="grid">
+    <div class="countdown" id="countdown"></div>
 
-<div class="card">
-<div class="site-title">FASTLISTPRO</div>
-<div class="site-tag">Mailing System</div>
-<a class="join-btn" href="https://fastlistpro.com/?rid=2" target="_blank">JOIN SITE</a>
-</div>
-
-<div class="card">
-<div class="site-title">BOOSTLOOPE</div>
-<div class="site-tag">Viral Traffic Loops</div>
-<a class="join-btn" href="https://boostloope.com/?ref=BL63275817" target="_blank">JOIN SITE</a>
-</div>
-
-<div class="card">
-<div class="site-title">MAILIGENICS</div>
-<div class="site-tag">Premium Lead Engine</div>
-<a class="join-btn" href="https://mailigenics.com/r/1" target="_blank">JOIN SITE</a>
-</div>
-
-<div class="card">
-<div class="site-title">SURE SEND MAILER</div>
-<div class="site-tag">Rock-Solid Delivery</div>
-<a class="join-btn" href="https://suresendmailer.com/r/1" target="_blank">JOIN SITE</a>
-</div>
-
-<div class="card">
-<div class="site-title">POSTFREE4LIFE</div>
-<div class="site-tag">Ad Exposure</div>
-<a class="join-btn" href="https://postfree4life.com/splashpage.php?id=7&r=Clicks2" target="_blank">JOIN SITE</a>
-</div>
-
-</div>
-
-<div class="countdown" id="countdown"></div>
-
-<div class="footer">
-© 2026 Dev Hobbins – Traffic 5 Hub
-</div>
-
-</div>
-
-<script>
+    <div class="footer">
+        © 2026 Dev Hobbins – Traffic 6 Hub
+    </div>
+</div> <script>
 const launchDate = new Date("March 9, 2026 00:00:00").getTime();
-
 setInterval(function(){
     const now = new Date().getTime();
     const distance = launchDate - now;
-
     const days = Math.floor(distance / (1000*60*60*24));
-    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-    const seconds = Math.floor((distance % (1000*60)) / 1000);
-
-    document.getElementById("countdown").innerHTML =
-    "Traffic Stadium Launch Countdown: " +
-    days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+    const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+    const seconds = Math.floor((distance % (1000*60))/1000);
+    document.getElementById("countdown").innerHTML = "TrafficStadium Launch Countdown: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
 },1000);
 </script>
-
 </body>
 </html>
