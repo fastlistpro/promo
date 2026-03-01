@@ -11,7 +11,6 @@
 :root{
     --primary:#ff4d4d;
     --secondary:#00d4ff;
-    --dark-card: rgba(255,255,255,0.06);
 }
 
 * { box-sizing: border-box; }
@@ -32,18 +31,18 @@ body{
     width:100%;
 }
 
-/* HEADER - CLEARS TO THE TOP */
+/* HEADER - HITS THE TOP OF THE BROWSER */
 .header{
     text-align:center;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.5);
     margin: 0;
     padding: 60px 20px;
-    border-bottom: 2px solid var(--primary);
+    border-bottom: 4px solid var(--primary);
 }
 
 h1{
     margin:0;
-    font-size:clamp(2rem, 10vw, 3.5rem);
+    font-size:clamp(2rem, 8vw, 3.5rem);
     font-weight:900;
     text-transform:uppercase;
     letter-spacing: -1px;
@@ -59,17 +58,14 @@ h1{
 }
 
 .card{
-    background: var(--dark-card);
+    background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px;
     padding: 25px;
     text-align: center;
-    transition: transform 0.2s;
 }
 
-.card:hover { transform: translateY(-5px); border-color: var(--secondary); }
-
-.site-title{ font-weight:800; font-size: 1.2rem; margin-bottom: 15px; }
+.site-title{ font-weight:800; font-size: 1.1rem; margin-bottom: 15px; letter-spacing: 1px;}
 
 .join-btn{
     display:block;
@@ -79,12 +75,12 @@ h1{
     text-decoration:none;
     color:white;
     font-weight:900;
-    text-transform: uppercase;
     font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
-/* TESTIMONIAL LINK */
-.testimonial-wrapper {
+/* TESTIMONIAL LINK - RESTORED WORDPRESS URL */
+.testimonial-anchor {
     text-decoration: none;
     display: block;
     margin: 0 20px 40px 20px;
@@ -95,19 +91,25 @@ h1{
     border: 1px solid #22c55e;
     border-radius: 12px;
     padding: 25px;
-    color: #f8fafc;
+    color: #fff;
     text-align: center;
     font-style: italic;
     line-height: 1.6;
+    transition: transform 0.2s, background 0.2s;
 }
 
-/* VISUAL COUNTDOWN TIMER */
-.timer-box {
+.sidebar:hover { 
+    transform: translateY(-3px); 
+    background: rgba(34,197,94,0.15); 
+}
+
+/* VISUAL TIMER BOX */
+.timer-wrap {
     margin: 20px;
     background: #000;
     border: 3px solid var(--secondary);
     border-radius: 15px;
-    padding: 30px;
+    padding: 40px 20px;
     text-align: center;
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
 }
@@ -115,23 +117,24 @@ h1{
 .timer-label {
     color: var(--secondary);
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
     display: block;
+    text-transform: uppercase;
 }
 
 .timer-display {
     font-family: 'Courier New', Courier, monospace;
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-size: clamp(1.4rem, 6vw, 2.8rem);
     font-weight: 900;
     color: #fff;
-    text-shadow: 0 0 10px var(--secondary);
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 
 .footer{
     text-align:center;
-    padding: 40px;
+    padding: 60px 40px;
     font-size: 0.8rem;
     color:#475569;
 }
@@ -158,16 +161,16 @@ h1{
         </div>
     </div>
 
-    <a href="https://fastlistpro.com/?rid=2" target="_blank" class="testimonial-wrapper">
+    <a href="https://bitcrowcom.wordpress.com/2026/02/16/fastlistpro-fast-and-professional/" target="_blank" class="testimonial-anchor">
         <div class="sidebar">
             <strong>⚡ Member Case Study — Roger (ceocrow):</strong><br>
             "The quality of the leads I generate through FastListPro is higher than those I get from other advertising platforms."
         </div>
     </a>
 
-    <div class="timer-box">
+    <div class="timer-wrap">
         <span class="timer-label">TRAFFICSTADIUM LAUNCH COUNTDOWN</span>
-        <div class="timer-display" id="countdown">00:00:00:00</div>
+        <div class="timer-display" id="countdown">00d : 00h : 00m : 00s</div>
     </div>
 
     <div class="footer">
@@ -177,31 +180,30 @@ h1{
 </div>
 
 <script>
-const targetDate = new Date("March 9, 2026 00:00:00").getTime();
+const target = new Date("March 9, 2026 00:00:00").getTime();
 
-function runTimer() {
+function updateTimer() {
     const now = new Date().getTime();
-    const diff = targetDate - now;
+    const gap = target - now;
 
-    if (diff < 0) {
+    if (gap < 0) {
         document.getElementById("countdown").innerHTML = "WE ARE LIVE!";
         return;
     }
 
-    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const s = Math.floor((diff % (1000 * 60)) / 1000);
+    const d = Math.floor(gap / (1000 * 60 * 60 * 24));
+    const h = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((gap % (1000 * 60)) / 1000);
 
-    // Formats numbers to always show two digits
-    const pad = (num) => String(num).padStart(2, '0');
+    const f = (n) => String(n).padStart(2, '0');
 
     document.getElementById("countdown").innerHTML = 
-        `${pad(d)}d : ${pad(h)}h : ${pad(m)}m : ${pad(s)}s`;
+        `${f(d)}d : ${f(h)}h : ${f(m)}m : ${f(s)}s`;
 }
 
-setInterval(runTimer, 1000);
-runTimer();
+setInterval(updateTimer, 1000);
+updateTimer();
 </script>
 
 </body>
