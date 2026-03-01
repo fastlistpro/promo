@@ -147,6 +147,12 @@ h1 {
     font-size: 0.95rem;
 }
 
+#countdown {
+    margin-top: 8px;
+    font-weight: 700;
+    color: #00d4ff;
+}
+
 .footer-text {
     margin-top: 25px;
     font-size: 0.75rem;
@@ -179,6 +185,7 @@ h1 {
 
 <div class="link-grid">
 
+<!-- FASTLISTPRO -->
 <div class="card">
 <a href="https://fastlistpro.com/?rid=2" class="btn-link" target="_blank">
 <div>
@@ -193,6 +200,7 @@ h1 {
 </div>
 </div>
 
+<!-- BOOSTLOOPE -->
 <div class="card">
 <a href="https://boostloope.com/?ref=BL63275817" class="btn-link" target="_blank">
 <div>
@@ -210,8 +218,9 @@ h1 {
 </div>
 
 <div class="blueprint-alert">
-🚀 <b>STRATEGIC BLUEPRINT HUB:</b> TrafficStadium.com Launching March 9, 2026.
-<div id="countdown" style="margin-top:8px;font-weight:700;color:#00d4ff;"></div>
+🚀 <b>STRATEGIC BLUEPRINT HUB:</b> 
+TrafficStadium.com Launching March 9, 2026.
+<div id="countdown"></div>
 </div>
 
 </div>
@@ -226,17 +235,15 @@ navigator.clipboard.writeText(text).then(() => {
 const code = element.querySelector('.promo-code');
 const originalText = code.innerText;
 code.innerText = 'COPIED!';
-code.style.color = '#22c55e';
 setTimeout(() => {
 code.innerText = originalText;
-code.style.color = '#fbbf24';
 }, 1200);
 });
 }
 
 const launchDate = new Date("March 9, 2026 00:00:00").getTime();
 
-const countdownFunction = setInterval(function() {
+setInterval(function() {
     const now = new Date().getTime();
     const distance = launchDate - now;
 
@@ -248,10 +255,6 @@ const countdownFunction = setInterval(function() {
     document.getElementById("countdown").innerHTML =
         "Countdown: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
 
-    if (distance < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = "🚀 LAUNCH DAY IS HERE!";
-    }
 }, 1000);
 </script>
 
