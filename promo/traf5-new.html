@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Traffic 5 Command Center</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
@@ -65,11 +64,7 @@ h1 {
     gap: 20px;
 }
 
-.link-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+.link-grid { display: flex; flex-direction: column; gap: 12px; }
 
 .card {
     background: rgba(255,255,255,0.04);
@@ -90,7 +85,8 @@ h1 {
     margin-bottom: 8px;
 }
 
-.site-title { font-weight: 800; }
+.site-title { font-size: 1rem; font-weight: 800; }
+.site-tag { font-size: 0.7rem; color: #64748b; font-weight: 500; }
 
 .join-btn {
     background: var(--primary);
@@ -112,11 +108,20 @@ h1 {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
+.spotlight-header {
+    font-weight: 700;
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 .quote {
     font-style: italic;
     color: #e2e8f0;
     font-size: 0.85rem;
     line-height: 1.5;
+    margin-bottom: 12px;
 }
 
 .blueprint-alert {
@@ -154,92 +159,107 @@ h1 {
 <div class="container">
 
 <div class="header-area">
-<h1>THE TRAFFIC <span class="highlight">5</span></h1>
-<p class="subtitle">Personal Strategic Command Center</p>
+    <h1>THE TRAFFIC <span class="highlight">5</span></h1>
+    <p class="subtitle">Personal Strategic Command Center</p>
 </div>
 
 <div class="main-content">
 
 <div class="link-grid">
 
+<!-- FASTLISTPRO -->
 <div class="card">
-<a href="https://fastlistpro.com/?rid=2" class="btn-link" target="_blank">
-<span class="site-title">FASTLISTPRO</span>
-<span class="join-btn">JOIN</span>
-</a>
+    <a href="https://fastlistpro.com/?rid=2" class="btn-link" target="_blank">
+        <div>
+            <span class="site-title">FASTLISTPRO</span>
+            <span class="site-tag">MAILING SYSTEM</span>
+        </div>
+        <span class="join-btn">JOIN</span>
+    </a>
 </div>
 
+<!-- BOOSTLOOPE -->
 <div class="card">
-<a href="https://boostloope.com/?ref=BL63275817" class="btn-link" target="_blank">
-<span class="site-title">BOOSTLOOPE</span>
-<span class="join-btn">JOIN</span>
-</a>
+    <a href="https://boostloope.com/?ref=BL63275817" class="btn-link" target="_blank">
+        <div>
+            <span class="site-title">BOOSTLOOPE</span>
+            <span class="site-tag">VIRAL TRAFFIC LOOPS</span>
+        </div>
+        <span class="join-btn">JOIN</span>
+    </a>
 </div>
 
+<!-- MAILIGENICS -->
 <div class="card">
-<a href="https://mailigenics.com/r/1" class="btn-link" target="_blank">
-<span class="site-title">MAILIGENICS</span>
-<span class="join-btn">JOIN</span>
-</a>
+    <a href="https://mailigenics.com/r/1" class="btn-link" target="_blank">
+        <div>
+            <span class="site-title">MAILIGENICS</span>
+            <span class="site-tag">PREMIUM LEAD ENGINE</span>
+        </div>
+        <span class="join-btn">JOIN</span>
+    </a>
 </div>
 
+<!-- SURE SEND MAILER -->
 <div class="card">
-<a href="https://suresendmailer.com/r/1" class="btn-link" target="_blank">
-<span class="site-title">SURE SEND MAILER</span>
-<span class="join-btn">JOIN</span>
-</a>
+    <a href="https://suresendmailer.com/r=1" class="btn-link" target="_blank">
+        <div>
+            <span class="site-title">SURE SEND MAILER</span>
+            <span class="site-tag">ROCK-SOLID DELIVERY</span>
+        </div>
+        <span class="join-btn">JOIN</span>
+    </a>
 </div>
 
+<!-- POSTFREE4LIFE -->
 <div class="card">
-<a href="https://postfree4life.com/splashpage.php?id=7&r=Clicks2" class="btn-link" target="_blank">
-<span class="site-title">POSTFREE4LIFE</span>
-<span class="join-btn">JOIN</span>
-</a>
+    <a href="https://postfree4life.com/splashpage.php?id=7&r=Clicks2" class="btn-link" target="_blank">
+        <div>
+            <span class="site-title">POSTFREE4LIFE</span>
+            <span class="site-tag">AD EXPOSURE</span>
+        </div>
+        <span class="join-btn">JOIN</span>
+    </a>
 </div>
 
 </div>
 
 <div class="sidebar">
 
-<div class="spotlight" style="background: rgba(34,197,94,0.05);">
-<div class="quote">
-"The quality of the leads I generate through FastListPro is higher than those I get from other advertising platforms."
-</div>
-<p style="font-size:0.75rem;color:#94a3b8;">
-— Roger (ceocrow)
-</p>
+<div class="spotlight" style="background: rgba(34,197,94,0.05); border-color: rgba(34,197,94,0.2);">
+    <div class="spotlight-header" style="color: var(--success);">⚡ Member Case Study</div>
+    <span class="quote">"The quality of the leads I generate through FastListPro is higher than those I get from other advertising platforms."</span>
+    <p style="font-size:0.75rem;color:#94a3b8;">— Roger (ceocrow)</p>
 </div>
 
 </div>
 
 <div class="blueprint-alert">
-🚀 <b>TrafficStadium.com Launching March 9, 2026</b>
-<div id="countdown"></div>
+    🚀 <b>TrafficStadium.com Launching March 9, 2026</b>
+    <div id="countdown"></div>
 </div>
 
 </div>
 
-<div class="footer-text">
-© 2026 Dev Hobbins – Traffic 5 Hub
-</div>
+<div class="footer-text">© 2026 Dev Hobbins – Traffic 5 Hub</div>
 
 </div>
 
 <script>
 const launchDate = new Date("March 9, 2026 00:00:00").getTime();
 
-setInterval(function(){
+setInterval(function() {
     const now = new Date().getTime();
     const distance = launchDate - now;
 
-    const days = Math.floor(distance / (1000*60*60*24));
-    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-    const seconds = Math.floor((distance % (1000*60)) / 1000);
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     document.getElementById("countdown").innerHTML =
-    "Countdown: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-},1000);
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+}, 1000);
 </script>
 
 </body>
