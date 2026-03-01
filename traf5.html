@@ -3,188 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Traffic 5 Command Center</title>
+<title>The Traffic 6 Command Center</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
-:root {
-    --primary: #ff4d4d;
-    --secondary: #00d4ff;
-    --dark: #0f172a;
-    --glass: rgba(255, 255, 255, 0.08);
-    --gold: #fbbf24;
-    --success: #22c55e;
-    --purple: #a78bfa;
+:root{
+    --primary:#ff4d4d;
+    --secondary:#00d4ff;
+    --gold:#fbbf24;
 }
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at top right, #1e293b, #0f172a);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 15px;
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:radial-gradient(circle at top right,#1e293b,#0f172a);
+    color:white;
+    display:flex;
+    justify-content:center;
+    padding:20px;
 }
 
-.container {
-    max-width: 850px;
-    width: 100%;
-    background: var(--glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 28px;
-    padding: 30px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+.container{
+    max-width:1000px;
+    width:100%;
 }
 
-.header-area { text-align: center; margin-bottom: 25px; }
-
-.logo-badge {
-    display: inline-block;
-    background: white;
-    padding: 3px;
-    border-radius: 50%;
-    border: 3px solid var(--secondary);
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    margin-bottom: 10px;
+.header{
+    text-align:center;
+    margin-bottom:30px;
 }
 
-.logo-badge img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-h1 {
-    font-weight: 900;
-    font-size: 2.2rem;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: -1px;
+h1{
+    margin:0;
+    font-size:2.5rem;
+    font-weight:900;
+    text-transform:uppercase;
 }
 
-.highlight { color: var(--primary); }
+.highlight{color:var(--primary);}
 
-.subtitle {
-    font-size: 0.95rem;
-    color: #94a3b8;
-    margin: 5px 0 0 0;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
 }
 
-.main-content {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 20px;
-    align-items: start;
+.card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:16px;
+    padding:18px;
 }
 
-.link-grid { display: flex; flex-direction: column; gap: 12px; }
+.site-title{font-weight:800;}
 
-.card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 12px 15px;
-    transition: 0.3s;
+.join-btn{
+    display:inline-block;
+    margin-top:10px;
+    background:var(--primary);
+    padding:8px 14px;
+    border-radius:8px;
+    text-decoration:none;
+    color:white;
+    font-weight:700;
+    font-size:.8rem;
 }
 
-.card:hover {
-    transform: translateX(5px);
-    border-color: var(--secondary);
-    background: rgba(255,255,255,0.07);
+.sidebar{
+    margin-top:30px;
+    background:rgba(34,197,94,0.05);
+    border:1px solid rgba(34,197,94,0.2);
+    border-radius:16px;
+    padding:18px;
 }
 
-.btn-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-decoration: none;
-    color: white;
-    margin-bottom: 8px;
+.countdown{
+    margin-top:40px;
+    text-align:center;
+    font-weight:900;
+    font-size:1.2rem;
+    color:var(--secondary);
 }
 
-.site-title { font-size: 1rem; font-weight: 800; display: block; }
-.site-tag { font-size: 0.7rem; color: #64748b; font-weight: 500; }
-
-.join-btn {
-    background: var(--primary);
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-}
-
-.promo-area {
-    display: flex;
-    align-items: center;
-    background: rgba(0,0,0,0.2);
-    padding: 8px 10px;
-    border-radius: 8px;
-    border: 1px dashed rgba(251, 191, 36, 0.3);
-    cursor: pointer;
-    justify-content: space-between;
-}
-
-.promo-label { font-size: 0.65rem; color: #94a3b8; font-family: monospace; }
-.promo-code { font-weight: 700; color: var(--gold); font-family: monospace; font-size: 0.7rem; }
-
-.sidebar { display: flex; flex-direction: column; gap: 15px; }
-
-.spotlight {
-    border-radius: 18px;
-    padding: 18px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.spotlight-header {
-    font-weight: 700;
-    font-size: 0.75rem;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.quote {
-    font-style: italic;
-    color: #e2e8f0;
-    font-size: 0.85rem;
-    line-height: 1.5;
-    margin-bottom: 12px;
-    display: block;
-}
-
-.blueprint-alert {
-    grid-column: span 2;
-    margin-top: 20px;
-    padding: 15px;
-    background: rgba(0, 212, 255, 0.05);
-    border-radius: 14px;
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-.blueprint-alert b { color: var(--secondary); }
-
-#countdown {
-    margin-top: 8px;
-    font-weight: 700;
-    color: #00d4ff;
-}
-
-.footer-text {
-    margin-top: 20px;
-    font-size: 0.7rem;
-    color: #475569;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    .main-content { grid-template-columns: 1fr; }
-    .blueprint-alert { grid-column: span 1; }
+.footer{
+    text-align:center;
+    margin-top:30px;
+    font-size:.75rem;
+    color:#475569;
 }
 </style>
 </head>
@@ -193,50 +99,73 @@ h1 {
 
 <div class="container">
 
-<div class="header-area">
-<div class="logo-badge">
-<img src="https://0.gravatar.com/userimage/263548868/348af7456df1e48f394231bc49d4e549?size=256" alt="Dev Hobbins">
-</div>
-<h1>THE TRAFFIC <span class="highlight">5</span></h1>
-<p class="subtitle">Personal Strategic Command Center</p>
+<div class="header">
+<h1>THE TRAFFIC <span class="highlight">6</span></h1>
 </div>
 
-<div class="main-content">
+<div class="grid">
 
-<div class="link-grid">
-<!-- ALL 5 SITE CARDS REMAIN EXACTLY AS IN YOUR MASTER FILE -->
+<div class="card">
+<div class="site-title">FASTLISTPRO</div>
+<a class="join-btn" href="https://fastlistpro.com/?rid=2" target="_blank">JOIN</a>
+</div>
+
+<div class="card">
+<div class="site-title">BOOSTLOOPE</div>
+<a class="join-btn" href="https://boostloope.com/?ref=BL63275817" target="_blank">JOIN</a>
+</div>
+
+<div class="card">
+<div class="site-title">MAILIGENICS</div>
+<a class="join-btn" href="https://mailigenics.com/r/1" target="_blank">JOIN</a>
+</div>
+
+<div class="card">
+<div class="site-title">SURE SEND MAILER</div>
+<a class="join-btn" href="https://suresendmailer.com/r/1" target="_blank">JOIN</a>
+</div>
+
+<div class="card">
+<div class="site-title">POSTFREE4LIFE</div>
+<a class="join-btn" href="https://postfree4life.com/splashpage.php?id=7&r=Clicks2" target="_blank">JOIN</a>
+</div>
+
+<div class="card">
+<div class="site-title">TRAFFICSTADIUM</div>
+<a class="join-btn" href="https://trafficstadium.com" target="_blank">JOIN</a>
+</div>
+
 </div>
 
 <div class="sidebar">
-<!-- ROGER TESTIMONIAL REMAINS -->
+⚡ Member Case Study — Roger (ceocrow):
+"The quality of the leads I generate through FastListPro is higher than those I get from other advertising platforms."
 </div>
 
-<div class="blueprint-alert">
-🚀 <b>STRATEGIC BLUEPRINT HUB:</b> Launching March 9, 2026.
-<div id="countdown"></div>
-</div>
+<div class="countdown" id="countdown"></div>
 
+<div class="footer">
+© 2026 Dev Hobbins – Traffic 6 Hub
 </div>
-
-<div class="footer-text">© 2026 Dev Hobbins - Traffic 5 Hub</div>
 
 </div>
 
 <script>
 const launchDate = new Date("March 9, 2026 00:00:00").getTime();
 
-setInterval(function() {
+setInterval(function(){
     const now = new Date().getTime();
     const distance = launchDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+    const seconds = Math.floor((distance % (1000*60))/1000);
 
     document.getElementById("countdown").innerHTML =
-        "Countdown: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-}, 1000);
+    "TrafficStadium Launch Countdown: " +
+    days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+},1000);
 </script>
 
 </body>
