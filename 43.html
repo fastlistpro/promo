@@ -34,7 +34,7 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 <h2>Dual Contest Campaign at FastListPro</h2>
 <p>The race to Member #600 is ON. Two contests. Win cash, status, and tools!</p>
 </div>
-<div class="dates">Campaign Period: <strong>March 2026</strong></div>
+<div class="dates">All Contests Run: <strong>March 6 – April 4, 2026</strong></div>
 <div class="contests">
 <div class="contest-card">
 <h3>🔥 March Click Blitz</h3>
@@ -64,12 +64,13 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 <div class="footer">FastListPro.com — Where Email Marketers Win</div>
 
 <script>
-    // Pure URL parsing - no redirects
-    const urlParams = new URLSearchParams(window.location.search);
-    const rid = urlParams.get('rid');
+(function() {
+    const params = new URLSearchParams(window.location.search);
+    const rid = params.get('rid');
     if (rid) {
         document.getElementById('join-link').href = "https://fastlistpro.com/?rid=" + rid;
     }
+})();
 </script>
 </body>
 </html>
