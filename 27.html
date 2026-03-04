@@ -97,7 +97,20 @@
     <script type="module" crossorigin src="/assets/index-BO-SYMY1.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-PGk96hdV.css">
   <script defer src="https://fastlistpro.com/~flock.js" data-proxy-url="https://fastlistpro.com/~api/analytics"></script></head>
-
+<script>
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var r = params.get("rid");
+    if(r){
+      var u = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
+      document.querySelectorAll('a').forEach(function(link){
+        if(link.href.includes("fastlistpro.com")) {
+          link.href = u;
+        }
+      });
+    }
+  })();
+</script>
   <body>
     <div id="root"></div>
     <script>
