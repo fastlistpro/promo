@@ -164,7 +164,7 @@ Refer <strong>Member #600</strong> and win <strong>$5.00 Cash Bonus!</strong>
 </div>
 
 <div class="cta-section">
-<a href="#REFURL#" class="cta-btn">
+<a href="https://fastlistpro.com/join.php" class="cta-btn" id="mainCTA">
 ⚡ Join FREE & Compete!
 </a>
 </div>
@@ -173,18 +173,12 @@ Refer <strong>Member #600</strong> and win <strong>$5.00 Cash Bonus!</strong>
 © 2026 FastListPro.com
 </div>
 
-<!-- GitHub Pages Tracking Fallback -->
 <script>
 (function(){
   var params = new URLSearchParams(window.location.search);
-  var r = params.get("rid");
-  if(!r) return;
-
-  var u = "https://fastlistpro.com/?rid=" + encodeURIComponent(r);
-
-  document.querySelectorAll('a[href*="#REFURL#"]').forEach(function(a){
-    a.href = u;
-  });
+  var r = params.get("rid") || "default";
+  var u = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
+  document.getElementById("mainCTA").href = u;
 })();
 </script>
 
