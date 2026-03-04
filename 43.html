@@ -21,6 +21,13 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 .prize-amount{color:#d4a843;font-weight:bold;text-align:right}
 .dates{text-align:center;padding:20px;color:#a78bfa;font-size:1.1em;margin-bottom:20px}
 .dates strong{color:#d4a843}
+
+/* New Member Benefits Section */
+.welcome-pack{background:rgba(212,168,67,0.1);border:2px solid #d4a843;border-radius:16px;padding:25px;max-width:850px;margin:20px auto 40px;text-align:center}
+.welcome-pack h4{color:#d4a843;font-size:1.5em;margin-bottom:15px;text-transform:uppercase;letter-spacing:1px}
+.benefit-grid{display:flex;flex-wrap:wrap;gap:15px;justify-content:center}
+.benefit-item{background:rgba(255,255,255,0.05);padding:10px 20px;border-radius:8px;font-weight:bold;color:#fff;border:1px solid rgba(212,168,67,0.2)}
+
 .bounty-alert{background:rgba(212,168,67,0.1);border:1px dashed #d4a843;padding:15px;border-radius:8px;margin-top:20px;text-align:center;color:#fff;font-size:0.95em}
 .cta-section{text-align:center;padding:20px 20px 50px}
 .cta-btn{display:inline-block;background:linear-gradient(135deg,#d4a843,#b8860b);color:#1a0a2e;padding:16px 40px;border-radius:50px;font-size:1.2em;font-weight:bold;text-decoration:none;cursor:pointer;border:none;box-shadow:0 4px 20px rgba(212,168,67,0.4);transition:transform 0.2s}
@@ -38,6 +45,17 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 
 <div class="dates">All Contests Run: <strong>March 6 – April 4, 2026</strong></div>
 
+<div class="welcome-pack">
+    <h4>🎁 NEW MEMBER WELCOME PACK</h4>
+    <p style="margin-bottom:15px; color:#c4b5fd;">Join today during the contest and immediately receive:</p>
+    <div class="benefit-grid">
+        <div class="benefit-item">✨ 5,000 Bonus Credits</div>
+        <div class="benefit-item">🤖 AI Writing Tools</div>
+        <div class="benefit-item">💰 40-50% Commissions</div>
+        <div class="benefit-item">📧 Smart Mailing System</div>
+    </div>
+</div>
+
 <div class="contests">
 <div class="contest-card">
 <h3>🔥 March Click Blitz</h3>
@@ -45,8 +63,6 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 <div class="prize-row"><span class="prize-rank">🥇 1st</span><span class="prize-amount">$5 + 500 Credits + 25 Tickets + Solo Ad</span></div>
 <div class="prize-row"><span class="prize-rank">🥈 2nd</span><span class="prize-amount">$3 + 300 Credits + 15 Tickets</span></div>
 <div class="prize-row"><span class="prize-rank">🥉 3rd</span><span class="prize-amount">$2 + 200 Credits + 10 Tickets</span></div>
-<div class="prize-row"><span class="prize-rank">4th</span><span class="prize-amount">150 Credits + 5 Tickets</span></div>
-<div class="prize-row"><span class="prize-rank">5th</span><span class="prize-amount">100 Credits + 3 Tickets</span></div>
 </div>
 
 <div class="contest-card">
@@ -55,24 +71,21 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 <div class="prize-row"><span class="prize-rank">🥇 1st</span><span class="prize-amount">$25 + Elite Lifetime + 2 Solo Ads + 30 Tickets</span></div>
 <div class="prize-row"><span class="prize-rank">🥈 2nd</span><span class="prize-amount">$15 + Ad Formatter + 1 Solo Ad + 20 Tickets</span></div>
 <div class="prize-row"><span class="prize-rank">🥉 3rd</span><span class="prize-amount">$5 + 5 Login Ads + 10 Tickets + 200 Credits</span></div>
-<div class="prize-row"><span class="prize-rank">4th</span><span class="prize-amount">$3 + 150 Credits + 5 Tickets</span></div>
-<div class="prize-row"><span class="prize-rank">5th</span><span class="prize-amount">$2 + 100 Credits + 3 Tickets</span></div>
 <div class="bounty-alert">
-<strong>🎯 Milestone Bounty:</strong> The member who refers <strong>Member #600</strong> wins an instant <strong>$5.00 Cash Bonus!</strong>
+<strong>🎯 Milestone Bounty:</strong> Refer <strong>Member #600</strong> and win an instant <strong>$5.00 Cash Bonus!</strong>
 </div>
 </div>
 </div>
 
 <div class="cta-section">
-<a href="#REFURL#" class="cta-btn" onclick="goToRegister(); return false;">Join FastListPro FREE &amp; Compete!</a>
+<a href="#REFURL#" class="cta-btn" onclick="goToRegister(); return false;">Join FREE & Get Your 5,000 Credits!</a>
 </div>
 
-<div class="footer">FastListPro.com — Where Email Marketers Win</div>
+<div class="footer">FastListPro.com — Built for Modern Marketers</div>
 
 <script>
-// Tracking Engine (Copied from working 42.html logic)
 const urlParams = new URLSearchParams(window.location.search);
-const rid = urlParams.get('rid') || '2'; // Defaulting to your ID 2
+const rid = urlParams.get('rid') || '2'; 
 const finalUrl = "https://fastlistpro.com/?rid=" + rid;
 
 function goToRegister(){
