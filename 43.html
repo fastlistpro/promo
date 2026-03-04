@@ -18,7 +18,7 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 .prize-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:0.95em}
 .prize-row:last-child{border:none}
 .prize-rank{color:#c4b5fd;font-weight:bold}
-.prize-amount{color:#d4a843;font-weight:bold}
+.prize-amount{color:#d4a843;font-weight:bold;text-align:right}
 .dates{text-align:center;padding:20px;color:#a78bfa;font-size:1.1em;margin-bottom:20px}
 .dates strong{color:#d4a843}
 .bounty-alert{background:rgba(212,168,67,0.1);border:1px dashed #d4a843;padding:15px;border-radius:8px;margin-top:20px;text-align:center;color:#fff;font-size:0.95em}
@@ -29,12 +29,15 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 </style>
 </head>
 <body>
+
 <div class="hero">
 <h1>🏀 March Madness</h1>
 <h2>Dual Contest Campaign at FastListPro</h2>
 <p>The race to Member #600 is ON. Two contests. Win cash, status, and tools!</p>
 </div>
+
 <div class="dates">All Contests Run: <strong>March 6 – April 4, 2026</strong></div>
+
 <div class="contests">
 <div class="contest-card">
 <h3>🔥 March Click Blitz</h3>
@@ -45,6 +48,7 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 <div class="prize-row"><span class="prize-rank">4th</span><span class="prize-amount">150 Credits + 5 Tickets</span></div>
 <div class="prize-row"><span class="prize-rank">5th</span><span class="prize-amount">100 Credits + 3 Tickets</span></div>
 </div>
+
 <div class="contest-card">
 <h3>🚀 March Recruit Rally</h3>
 <span class="type">Referral Contest — Invite & Win Big</span>
@@ -58,10 +62,29 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 </div>
 </div>
 </div>
+
 <div class="cta-section">
-<a class="cta-btn" href="#REFURL#" onclick="goToRegister()">Join FastListPro FREE &amp; Compete!</a>
+<a href="#REFURL#" class="cta-btn" onclick="goToRegister(); return false;">Join FastListPro FREE &amp; Compete!</a>
 </div>
+
 <div class="footer">FastListPro.com — Where Email Marketers Win</div>
-<script>function goToRegister(){window.location.href="#REFURL#";}</script>
+
+<script>
+// Tracking Engine (Copied from working 42.html logic)
+const urlParams = new URLSearchParams(window.location.search);
+const rid = urlParams.get('rid') || '2'; // Defaulting to your ID 2
+const finalUrl = "https://fastlistpro.com/?rid=" + rid;
+
+function goToRegister(){
+  window.location.href = finalUrl;
+}
+
+document.querySelectorAll('a').forEach(link => {
+  if (link.getAttribute('href') === '#REFURL#') {
+    link.href = finalUrl;
+  }
+});
+</script>
+
 </body>
 </html>
