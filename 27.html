@@ -122,5 +122,18 @@
     }
   });
 </script>
+ <script>
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var r = params.get("rid");
+    if(r) {
+      document.querySelectorAll('a').forEach(function(link){
+        if(link.href.includes("fastlistpro.com")) {
+          link.href = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
+        }
+      });
+    }
+  })();
+</script> 
   </body>
 </html>
