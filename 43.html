@@ -1,240 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>March Madness at FastListPro</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-    font-family:Georgia,serif;
-    background:linear-gradient(135deg,#1a0a2e,#0d0618);
-    color:#fff;
-    min-height:100vh;
-}
-
-.hero{
-    text-align:center;
-    padding:70px 20px 40px;
-}
-
-.hero h1{
-    font-size:3em;
-    color:#d4a843;
-    text-shadow:0 2px 12px rgba(212,168,67,0.4);
-    margin-bottom:12px;
-}
-
-.hero h2{
-    font-size:1.4em;
-    color:#c4b5fd;
-    margin-bottom:18px;
-    font-weight:400;
-}
-
-.hero p{
-    font-size:1.15em;
-    color:#a78bfa;
-    max-width:650px;
-    margin:0 auto 30px;
-}
-
-.dates{
-    text-align:center;
-    padding:20px;
-    color:#a78bfa;
-    font-size:1.1em;
-}
-
-.dates strong{
-    color:#d4a843;
-}
-
-.welcome-pack{
-    background:rgba(212,168,67,0.08);
-    border:2px solid #d4a843;
-    border-radius:18px;
-    padding:30px;
-    max-width:900px;
-    margin:30px auto 50px;
-    text-align:center;
-}
-
-.welcome-pack h3{
-    color:#d4a843;
-    font-size:1.6em;
-    margin-bottom:18px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
-
-.benefit-grid{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-    justify-content:center;
-}
-
-.benefit-item{
-    background:rgba(255,255,255,0.06);
-    padding:12px 22px;
-    border-radius:10px;
-    font-weight:bold;
-    border:1px solid rgba(212,168,67,0.3);
-}
-
-.contests{
-    display:flex;
-    flex-wrap:wrap;
-    gap:28px;
-    justify-content:center;
-    padding:0 20px 50px;
-    max-width:1000px;
-    margin:0 auto;
-}
-
-.contest-card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(212,168,67,0.35);
-    border-radius:18px;
-    padding:30px;
-    flex:1;
-    min-width:300px;
-    max-width:450px;
-}
-
-.contest-card h3{
-    color:#d4a843;
-    font-size:1.6em;
-    margin-bottom:14px;
-}
-
-.prize-row{
-    display:flex;
-    justify-content:space-between;
-    padding:8px 0;
-    border-bottom:1px solid rgba(255,255,255,0.08);
-    font-size:0.95em;
-}
-
-.bounty{
-    margin-top:18px;
-    padding:14px;
-    border:1px dashed #d4a843;
-    border-radius:10px;
-    background:rgba(212,168,67,0.08);
-    text-align:center;
-    font-size:0.95em;
-}
-
-.cta-section{
-    text-align:center;
-    padding:30px 20px 70px;
-}
-
-.cta-btn{
-    display:inline-block;
-    background:linear-gradient(135deg,#d4a843,#b8860b);
-    color:#1a0a2e;
-    padding:18px 48px;
-    border-radius:50px;
-    font-size:1.25em;
-    font-weight:bold;
-    text-decoration:none;
-    box-shadow:0 6px 25px rgba(212,168,67,0.5);
-    transition:all 0.25s ease;
-}
-
-.cta-btn:hover{
-    transform:scale(1.06);
-}
-
-.footer{
-    text-align:center;
-    padding:25px;
-    color:rgba(255,255,255,0.45);
-    font-size:0.85em;
-}
-
-.footer a{
-    color:#a78bfa;
-    text-decoration:none;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>March Madness at FastListPro</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618);color:#fff;min-height:100vh}
+        .hero{text-align:center;padding:60px 20px 40px}
+        .hero h1{font-size:2.8em;color:#d4a843;text-shadow:0 2px 10px rgba(212,168,67,0.3);margin-bottom:10px}
+        .hero h2{font-size:1.4em;color:#c4b5fd;margin-bottom:20px;font-weight:400}
+        .hero p{font-size:1.1em;color:#a78bfa;max-width:600px;margin:0 auto 30px}
+        .dates{text-align:center;padding:20px;color:#a78bfa;font-size:1.1em;margin-bottom:20px}
+        .dates strong{color:#d4a843}
+        .welcome-pack{background:rgba(212,168,67,0.1);border:2px solid #d4a843;border-radius:16px;padding:25px;max-width:850px;margin:20px auto 40px;text-align:center}
+        .welcome-pack h4{color:#d4a843;font-size:1.5em;margin-bottom:15px;text-transform:uppercase;letter-spacing:1px}
+        .benefit-grid{display:flex;flex-wrap:wrap;gap:15px;justify-content:center}
+        .benefit-item{background:rgba(255,255,255,0.05);padding:10px 20px;border-radius:8px;font-weight:bold;color:#fff;border:1px solid rgba(212,168,67,0.2)}
+        .contests{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;padding:0 20px 40px;max-width:900px;margin:0 auto}
+        .contest-card{background:rgba(255,255,255,0.05);border:1px solid rgba(212,168,67,0.3);border-radius:16px;padding:30px;flex:1;min-width:280px;max-width:400px}
+        .contest-card h3{color:#d4a843;font-size:1.5em;margin-bottom:8px}
+        .prize-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:0.95em}
+        .prize-amount{color:#d4a843;font-weight:bold;text-align:right}
+        .prize-rank{color:#c4b5fd;font-weight:bold}
+        .bounty-alert{background:rgba(212,168,67,0.1);border:1px dashed #d4a843;padding:15px;border-radius:8px;margin-top:20px;text-align:center;color:#fff;font-size:0.95em}
+        .cta-section{text-align:center;padding:20px 20px 50px}
+        .cta-btn{display:inline-block;background:linear-gradient(135deg,#d4a843,#b8860b);color:#1a0a2e;padding:16px 40px;border-radius:50px;font-size:1.2em;font-weight:bold;text-decoration:none;cursor:pointer;border:none;box-shadow:0 4px 20px rgba(212,168,67,0.4);transition:transform 0.2s}
+        .cta-btn:hover{transform:scale(1.05)}
+        .footer{text-align:center;padding:20px;color:rgba(255,255,255,0.4);font-size:0.85em}
+        .footer a{color:#a78bfa;text-decoration:none}
+    </style>
 </head>
-
 <body>
 
-<div class="hero">
-    <h1>🏀 March Madness</h1>
-    <h2>Dual Contest Campaign at FastListPro</h2>
-    <p>The race to Member #600 is ON. Two contests. Cash prizes. Status. Traffic power. Join FREE and compete!</p>
-</div>
-
-<div class="dates">
-    All Contests Run: <strong>March 6 – April 4, 2026</strong>
-</div>
-
-<div class="welcome-pack">
-    <h3>🎁 New Member Welcome Pack</h3>
-    <div class="benefit-grid">
-        <div class="benefit-item">✨ 5,000 Bonus Credits</div>
-        <div class="benefit-item">🤖 AI Writing Tools</div>
-        <div class="benefit-item">📧 High-Target Mailer</div>
-        <div class="benefit-item">📊 Pro Click Tracking</div>
-    </div>
-</div>
-
-<div class="contests">
-    <div class="contest-card">
-        <h3>🔥 March Click Blitz</h3>
-        <div class="prize-row"><span>🥇 1st</span><span>$5 + 500 Credits + 25 Tickets + Solo Ad</span></div>
-        <div class="prize-row"><span>🥈 2nd</span><span>$3 + 300 Credits + 15 Tickets</span></div>
-        <div class="prize-row"><span>🥉 3rd</span><span>$2 + 200 Credits + 10 Tickets</span></div>
+    <div class="hero">
+        <h1>🏀 March Madness</h1>
+        <h2>Dual Contest Campaign at FastListPro</h2>
+        <p>The race to Member #600 is ON. Two contests. Win cash, status, and tools!</p>
     </div>
 
-    <div class="contest-card">
-        <h3>🚀 March Recruit Rally</h3>
-        <div class="prize-row"><span>🥇 1st</span><span>$25 + Elite Lifetime + 2 Solo Ads + 30 Tickets</span></div>
-        <div class="prize-row"><span>🥈 2nd</span><span>$15 + Ad Formatter + 1 Solo Ad + 20 Tickets</span></div>
-        <div class="prize-row"><span>🥉 3rd</span><span>$5 + 5 Login Ads + 10 Tickets + 200 Credits</span></div>
+    <div class="dates">All Contests Run: <strong>March 6 – April 4, 2026</strong></div>
 
-        <div class="bounty">
-            🎯 <strong>Milestone Bounty:</strong> Refer <strong>Member #600</strong> and win an instant <strong>$5.00 Cash Bonus!</strong>
+    <div class="welcome-pack">
+        <h4>🎁 NEW MEMBER WELCOME PACK</h4>
+        <p style="margin-bottom:15px; color:#c4b5fd;">Join FREE today during the contest and receive:</p>
+        <div class="benefit-grid">
+            <div class="benefit-item">✨ 5,000 Bonus Credits</div>
+            <div class="benefit-item">🤖 AI Writing Tools</div>
+            <div class="benefit-item">📧 High-Target Mailer</div>
+            <div class="benefit-item">📊 Pro Click Tracking</div>
         </div>
     </div>
-</div>
 
-<div class="cta-section">
-    <a id="main-link" href="https://fastlistpro.com/?rid=2" class="cta-btn">
-        ⚡ Join FREE & Claim Your 5,000 Credits!
-    </a>
-</div>
+    <div class="contests">
+        <div class="contest-card">
+            <h3>🔥 March Click Blitz</h3>
+            <div class="prize-row"><span class="prize-rank">🥇 1st</span><span class="prize-amount">$5 + 500 Credits + 25 Tickets + Solo Ad</span></div>
+            <div class="prize-row"><span class="prize-rank">🥈 2nd</span><span class="prize-amount">$3 + 300 Credits + 15 Tickets</span></div>
+            <div class="prize-row"><span class="prize-rank">🥉 3rd</span><span class="prize-amount">$2 + 200 Credits + 10 Tickets</span></div>
+        </div>
+        <div class="contest-card">
+            <h3>🚀 March Recruit Rally</h3>
+            <div class="prize-row"><span class="prize-rank">🥇 1st</span><span class="prize-amount">$25 + Elite Lifetime + 2 Solo Ads + 30 Tickets</span></div>
+            <div class="prize-row"><span class="prize-rank">🥈 2nd</span><span class="prize-amount">$15 + Ad Formatter + 1 Solo Ad + 20 Tickets</span></div>
+            <div class="prize-row"><span class="prize-rank">🥉 3rd</span><span class="prize-amount">$5 + 5 Login Ads + 10 Tickets + 200 Credits</span></div>
+            <div class="bounty-alert"><strong>🎯 Milestone Bounty:</strong> Refer <strong>Member #600</strong> and win an instant <strong>$5.00 Cash Bonus!</strong></div>
+        </div>
+    </div>
 
-<div class="footer">
-    © 2026 <a id="foot-link" href="https://fastlistpro.com/?rid=2">FastListPro.com</a> — Built for Modern Marketers
-</div>
+    <div class="cta-section">
+        <a id="main-link" href="https://fastlistpro.com/?rid=2" class="cta-btn" onclick="goToRegister(); return false;">⚡ Join FREE & Claim Your 5,000 Credits!</a>
+    </div>
 
-<script>
-(function() {
-    var baseUrl = 'https://fastlistpro.com/?rid=2';
-    var params = new URLSearchParams(window.location.search);
-    var rid = params.get('rid');
-    var finalUrl = baseUrl;
+    <div class="footer">
+        <p>© 2026 <a id="foot-link" href="https://fastlistpro.com/?rid=2">FastListPro.com</a> — Built for Modern Marketers</p>
+    </div>
 
-    if (rid && /^\d+$/.test(rid)) {
-        finalUrl = 'https://fastlistpro.com/?rid=' + rid;
-    }
+    <script>
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const rid = urlParams.get('rid') || '2'; 
+            const finalUrl = "https://fastlistpro.com/?rid=" + rid;
 
-    var mainLink = document.getElementById('main-link');
-    var footLink = document.getElementById('foot-link');
+            // Immediately update the href attributes
+            const mainLink = document.getElementById('main-link');
+            const footLink = document.getElementById('foot-link');
+            
+            if (mainLink) mainLink.href = finalUrl;
+            if (footLink) footLink.href = finalUrl;
 
-    if (mainLink) mainLink.href = finalUrl;
-    if (footLink) footLink.href = finalUrl;
-})();
-</script>
-
+            // Ensure the click action also uses the correct URL
+            window.goToRegister = function() {
+                window.location.href = finalUrl;
+            };
+        })();
+    </script>
 </body>
 </html>
