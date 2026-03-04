@@ -18,7 +18,7 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 .prize-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:0.95em}
 .prize-row:last-child{border:none}
 .prize-rank{color:#c4b5fd;font-weight:bold}
-.prize-amount{color:#d4a843;font-weight:bold;text-align:right}
+.prize-amount{color:#d4a843;font-weight:bold}
 .dates{text-align:center;padding:20px;color:#a78bfa;font-size:1.1em;margin-bottom:20px}
 .dates strong{color:#d4a843}
 .bounty-alert{background:rgba(212,168,67,0.1);border:1px dashed #d4a843;padding:15px;border-radius:8px;margin-top:20px;text-align:center;color:#fff;font-size:0.95em}
@@ -38,7 +38,7 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 <div class="contests">
 <div class="contest-card">
 <h3>🔥 March Click Blitz</h3>
-<span class="type">Activity Contest: March 6 – April 4</span>
+<span class="type">Click Contest — Read & Click to Win</span>
 <div class="prize-row"><span class="prize-rank">🥇 1st</span><span class="prize-amount">$5 + 500 Credits + 25 Tickets + Solo Ad</span></div>
 <div class="prize-row"><span class="prize-rank">🥈 2nd</span><span class="prize-amount">$3 + 300 Credits + 15 Tickets</span></div>
 <div class="prize-row"><span class="prize-rank">🥉 3rd</span><span class="prize-amount">$2 + 200 Credits + 10 Tickets</span></div>
@@ -47,7 +47,7 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 </div>
 <div class="contest-card">
 <h3>🚀 March Recruit Rally</h3>
-<span class="type">Referral Contest: March 6 – April 4</span>
+<span class="type">Referral Contest — Invite & Win Big</span>
 <div class="prize-row"><span class="prize-rank">🥇 1st</span><span class="prize-amount">$25 + Elite Lifetime + 2 Solo Ads + 30 Tickets</span></div>
 <div class="prize-row"><span class="prize-rank">🥈 2nd</span><span class="prize-amount">$15 + Ad Formatter + 1 Solo Ad + 20 Tickets</span></div>
 <div class="prize-row"><span class="prize-rank">🥉 3rd</span><span class="prize-amount">$5 + 5 Login Ads + 10 Tickets + 200 Credits</span></div>
@@ -59,18 +59,9 @@ body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618
 </div>
 </div>
 <div class="cta-section">
-<a id="join-link" class="cta-btn" href="https://fastlistpro.com/?rid=2">Join FastListPro FREE &amp; Compete!</a>
+<a class="cta-btn" href="#REFURL#" onclick="goToRegister()">Join FastListPro FREE &amp; Compete!</a>
 </div>
 <div class="footer">FastListPro.com — Where Email Marketers Win</div>
-
-<script>
-(function() {
-    const params = new URLSearchParams(window.location.search);
-    const rid = params.get('rid');
-    if (rid) {
-        document.getElementById('join-link').href = "https://fastlistpro.com/?rid=" + rid;
-    }
-})();
-</script>
+<script>function goToRegister(){window.location.href="#REFURL#";}</script>
 </body>
 </html>
