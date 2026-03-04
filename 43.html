@@ -10,7 +10,7 @@
 body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a0a2e,#0d0618);color:#fff;min-height:100vh}
 
 .hero{text-align:center;padding:60px 20px 40px}
-.hero h1{font-size:2.8em;color:#d4a843;text-shadow:0 2px 10px rgba(212,168,67,0.3);margin-bottom:10px}
+.hero h1{font-size:2.8em;color:#d4a843;margin-bottom:10px}
 .hero h2{font-size:1.4em;color:#c4b5fd;margin-bottom:20px;font-weight:400}
 .hero p{font-size:1.1em;color:#a78bfa;max-width:600px;margin:0 auto 30px}
 
@@ -32,7 +32,6 @@ color:#d4a843;
 font-size:1.5em;
 margin-bottom:15px;
 text-transform:uppercase;
-letter-spacing:1px;
 }
 
 .benefit-grid{
@@ -128,7 +127,7 @@ font-size:0.85em;
 <div class="hero">
 <h1>🏀 March Madness</h1>
 <h2>Dual Contest Campaign at FastListPro</h2>
-<p>The race to Member #600 is ON. Two contests. Win cash, credits, tools, and status!</p>
+<p>The race to Member #600 is ON. Win cash, credits, tools, and status!</p>
 </div>
 
 <div class="dates">
@@ -137,9 +136,6 @@ All Contests Run: <strong>March 6 – April 4, 2026</strong>
 
 <div class="welcome-pack">
 <h4>🎁 NEW MEMBER WELCOME PACK</h4>
-<p style="margin-bottom:15px;color:#c4b5fd;">
-Join FREE today during the contest and receive:
-</p>
 <div class="benefit-grid">
 <div class="benefit-item">✨ 5,000 Bonus Credits</div>
 <div class="benefit-item">🤖 AI Writing Tools</div>
@@ -149,37 +145,48 @@ Join FREE today during the contest and receive:
 </div>
 
 <div class="contests">
-
 <div class="contest-card">
 <h3>🔥 March Click Blitz</h3>
-<div class="prize-row"><span class="prize-rank">🥇 1st</span><span class="prize-amount">$5 + 500 Credits + 25 Tickets + Solo Ad</span></div>
-<div class="prize-row"><span class="prize-rank">🥈 2nd</span><span class="prize-amount">$3 + 300 Credits + 15 Tickets</span></div>
-<div class="prize-row"><span class="prize-rank">🥉 3rd</span><span class="prize-amount">$2 + 200 Credits + 10 Tickets</span></div>
+<div class="prize-row"><span class="prize-rank">🥇 1st</span><span class="prize-amount">$5 + Credits + Tickets</span></div>
+<div class="prize-row"><span class="prize-rank">🥈 2nd</span><span class="prize-amount">$3 + Credits</span></div>
+<div class="prize-row"><span class="prize-rank">🥉 3rd</span><span class="prize-amount">$2 + Credits</span></div>
 </div>
 
 <div class="contest-card">
 <h3>🚀 March Recruit Rally</h3>
-<div class="prize-row"><span class="prize-rank">🥇 1st</span><span class="prize-amount">$25 + Elite Lifetime + 2 Solo Ads + 30 Tickets</span></div>
-<div class="prize-row"><span class="prize-rank">🥈 2nd</span><span class="prize-amount">$15 + Ad Formatter + 1 Solo Ad + 20 Tickets</span></div>
-<div class="prize-row"><span class="prize-rank">🥉 3rd</span><span class="prize-amount">$5 + 5 Login Ads + 10 Tickets + 200 Credits</span></div>
+<div class="prize-row"><span class="prize-rank">🥇 1st</span><span class="prize-amount">$25 + Elite + Ads</span></div>
 
 <div class="bounty-alert">
 <strong>🎯 Milestone Bounty:</strong>
-Refer <strong>Member #600</strong> and win an instant <strong>$5.00 Cash Bonus!</strong>
+Refer <strong>Member #600</strong> and win <strong>$5.00 Cash Bonus!</strong>
 </div>
 </div>
-
 </div>
 
 <div class="cta-section">
 <a href="#REFURL#" class="cta-btn">
-⚡ Join FREE & Claim Your 5,000 Credits!
+⚡ Join FREE & Compete!
 </a>
 </div>
 
 <div class="footer">
-© 2026 FastListPro.com — Built for Modern Marketers
+© 2026 FastListPro.com
 </div>
 
-<script>(function(){var r=new URLSearchParams(window.location.search).get("rid")||"";var u=r?"https://fastlistpro.com/?rid="+encodeURIComponent(r):"https://fastlistpro.com";document.querySelectorAll('a[href*="#REFURL#"]').forEach(function(a){a.href=u})})()</script></body>
+<!-- GitHub Pages Tracking Fallback -->
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var r = params.get("rid");
+  if(!r) return;
+
+  var u = "https://fastlistpro.com/?rid=" + encodeURIComponent(r);
+
+  document.querySelectorAll('a[href*="#REFURL#"]').forEach(function(a){
+    a.href = u;
+  });
+})();
+</script>
+
+</body>
 </html>
