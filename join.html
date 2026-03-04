@@ -1,0 +1,6 @@
+<script>
+  // This "Brain" file fixes the link for EVERY page that sends traffic here
+  const params = new URLSearchParams(window.location.search);
+  const rid = params.get('rid') || 'default';
+  window.location.href = "https://fastlistpro.com/join.php?rid=" + rid;
+</script>
