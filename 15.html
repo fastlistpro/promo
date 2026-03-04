@@ -30,7 +30,7 @@ h1{font-size:clamp(32px,5vw,60px);font-weight:900;background:linear-gradient(135
         <span class="prize-text">IN MONTHLY CASH PRIZES</span>
     </div>
 
-    <a href="https://fastlistpro.com/?rid=1" class="cta-btn">Join The Celebration</a>
+    <a id="contestBtn" href="https://fastlistpro.com/join.php" class="cta-btn">Join The Celebration</a>
     
     <div class="footer">
         FastListPro &copy; 2026<br>
@@ -39,13 +39,17 @@ h1{font-size:clamp(32px,5vw,60px);font-weight:900;background:linear-gradient(135
 </div>
 
 <script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const rid = urlParams.get('rid') || '1';
-  document.querySelectorAll('a').forEach(link => {
-    if (link.href.includes('fastlistpro.com')) {
-      link.href = "https://fastlistpro.com/?rid=" + rid;
-    }
-  });
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    // Uses your Charter Number as the default if no RID is present
+    var r = params.get("rid") || "LC014757271";
+    var u = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
+    
+    // Updates all links on the page to the correct affiliate URL
+    document.querySelectorAll('a').forEach(function(a){
+      a.href = u;
+    });
+  })();
 </script>
 </body>
 </html>
