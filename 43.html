@@ -174,26 +174,26 @@ Refer <strong>Member #600</strong> and win <strong>$5.00 Cash Bonus!</strong>
 </div>
 
 <script>
-(function(){
-  var params = new URLSearchParams(window.location.search);
-  var r = params.get("rid") || "default";
-  var u = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-  document.getElementById("mainCTA").href = u;
-})();
-</script>
-
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r) {
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-        }
-      });
+(function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  let rid = urlParams.get('rid') || urlParams.get('id');
+  
+  // Default to 2 if no RID is provided
+  if (!rid) rid = '2';
+  
+  // Construct destination URL
+  const signupUrl = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(rid);
+  
+  // Apply to primary button
+  document.getElementById("mainCTA").href = signupUrl;
+  
+  // Apply to all other fastlistpro links on page
+  document.querySelectorAll('a').forEach(function(link) {
+    if (link.href.includes("fastlistpro.com")) {
+      link.href = signupUrl;
     }
-  })();
+  });
+})();
 </script>
 </body>
 </html>
