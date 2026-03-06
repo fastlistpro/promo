@@ -44,7 +44,7 @@ body{margin:0;font-family:'Poppins',sans-serif;background:#0a4c8c url(https://fa
 </h2>
 <h2 class="title">Welcome to my Top Website Mailer Pick - <span>Fast List Pro!</span></h2>
 <p>This platform will help you build your Referral team and grow your online business in no time.</p>
-<a href="#REFURL#" class="orange-btn">Create your own powerful referral network</a>
+<a href="https://fastlistpro.com/auth?tab=signup&rid=2" class="orange-btn">Create your own powerful referral network</a>
 </div>
 </div>
 
@@ -74,53 +74,29 @@ body{margin:0;font-family:'Poppins',sans-serif;background:#0a4c8c url(https://fa
     Build Your Referral Team Today!
 </h2>
 <p>Don't wait to start growing your referral team. With Fast List Pro, you'll get access to powerful tools to drive traffic and recruit affiliates.</p>
-<a href="#REFURL#" class="orange-btn" style="background:#fff;color:#ff6b35;">Start today and watch your referrals grow!</a>
+<a href="https://fastlistpro.com/auth?tab=signup&rid=2" class="orange-btn" style="background:#fff;color:#ff6b35;">Start today and watch your referrals grow!</a>
 </div>
 </div>
 
 <div class="credits-part">
 <h2 class="title">Get <span>5,000</span> Free Mailing Credits - Use Promo Code <span>WELCOME</span></h2>
 <div class="promo-code"><span>Promo Code:</span><span class="code">WELCOME</span></div>
-<a href="#REFURL#" class="orange-btn">Join Fast List Pro Now</a>
+<a href="https://fastlistpro.com/auth?tab=signup&rid=2" class="orange-btn">Join Fast List Pro Now</a>
 </div>
 </div>
 </div>
 
 <script>
+(function() {
   const urlParams = new URLSearchParams(window.location.search);
-  const rid = urlParams.get('rid') || '1'; 
-  document.querySelectorAll('a').forEach(link => {
-    if (link.getAttribute('href') === '#REFURL#') {
-      link.href = "https://fastlistpro.com/?rid=" + rid;
-    }
+  let rid = urlParams.get('rid') || '2';
+  if (rid === '1' || rid === '' || rid.toLowerCase() === 'admin') rid = '2';
+  const signupUrl = "https://fastlistpro.com/auth?tab=signup&rid=" + encodeURIComponent(rid);
+  
+  document.querySelectorAll('a[href*="fastlistpro.com"]').forEach(link => {
+    link.href = signupUrl;
   });
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r){
-      var u = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = u;
-        }
-      });
-    }
-  })();
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r) {
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-        }
-      });
-    }
-  })();
+})();
 </script>
 </body>
 </html>
