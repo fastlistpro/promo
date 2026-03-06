@@ -12,7 +12,6 @@ h1{font-size:28px;color:#fdcd02;margin-bottom:20px;}
 .promo{background:#1a1a2e;padding:20px;border-radius:10px;margin:20px 0;font-size:16px;line-height:1.8;}
 .section{margin:25px 0;}
 .badge{width:80px;margin:10px;}
-.ciphera{font-size:12px;color:#888;margin:10px 0;}
 .bonus{color:#fdcd02;font-weight:bold;font-size:18px;}
 .motivator{font-style:italic;color:#aaa;margin:20px 0;font-size:14px;}
 .cta{display:block;background:#ff6b35;color:#fff;padding:15px 30px;border-radius:30px;text-decoration:none;font-weight:bold;margin:10px auto;max-width:300px;}
@@ -32,44 +31,22 @@ h1{font-size:28px;color:#fdcd02;margin-bottom:20px;}
 </div>
 <div class="motivator">"Every step brings you closer to unlocking the Vault. Start now and let your badge speak for itself."</div>
 <div class="section">
-<a href="https://fastlistpro.com/?rid=2" class="cta">1. Join FastListPro Now</a>
+<a href="https://fastlistpro.com/auth?tab=signup&rid=2" class="cta">1. Join FastListPro Now</a>
 </div>
 </div>
-  <script>
+
+<script>
+(function() {
   const urlParams = new URLSearchParams(window.location.search);
-  const rid = urlParams.get('rid') || '1';
-  document.querySelectorAll('a').forEach(link => {
-    if (link.href.includes('fastlistpro.com')) {
-      link.href = "https://fastlistpro.com/?rid=" + rid;
-    }
+  let rid = urlParams.get('rid') || '2';
+  if (rid === '1' || rid === '' || rid.toLowerCase() === 'admin') rid = '2';
+  
+  const signupUrl = "https://fastlistpro.com/auth?tab=signup&rid=" + encodeURIComponent(rid);
+  
+  document.querySelectorAll('a[href*="fastlistpro.com"]').forEach(link => {
+    link.href = signupUrl;
   });
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r){
-      var u = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = u;
-        }
-      });
-    }
-  })();
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r) {
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-        }
-      });
-    }
-  })();
+})();
 </script>
 </body>
 </html>
