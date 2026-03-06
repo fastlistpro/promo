@@ -62,10 +62,7 @@ h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.08;margin-bottom
 .testimonials{position:relative;z-index:1;padding:80px 20px;background:#07040f}
 .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:960px;margin:0 auto}
 .testi-card{background:linear-gradient(145deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px 24px;position:relative}
-
-/* FIXED QUOTATION SYMBOL BELOW */
 .testi-card::before{content:"\201C";position:absolute;top:12px;left:16px;font-size:48px;color:rgba(255,215,0,0.2);font-family:Georgia,serif;line-height:1}
-
 .testi-text{font-size:15px;color:#c4b5fd;line-height:1.7;margin-bottom:16px;padding-top:20px;font-style:italic}
 .testi-author{font-size:13px;color:#ffd700;font-weight:700;text-transform:uppercase;letter-spacing:1px}
 
@@ -79,15 +76,6 @@ h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.08;margin-bottom
 /* ── Footer ── */
 .footer{position:relative;z-index:1;padding:30px 20px;text-align:center;border-top:1px solid rgba(255,255,255,0.05);color:#606080;font-size:12px}
 .footer a{color:#7b2ff7;text-decoration:none}
-
-/* ── Mobile polish ── */
-@media(max-width:600px){
-  .hero{padding:50px 16px 30px}
-  .stats{gap:24px}
-  .cta-btn{padding:16px 36px;font-size:16px}
-  .features{padding:60px 16px}
-  .bottom-cta{padding:70px 16px}
-}
 </style>
 </head>
 <body>
@@ -99,7 +87,7 @@ h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.08;margin-bottom
   <div class="relaunch-badge">✦ Official Relaunch ✦</div>
   <h1>FastListPro<br>Has Relaunched</h1>
   <p class="tagline">The safelist you loved is back — <strong>rebuilt from the ground up</strong> with powerful new tools, bigger rewards, and a community ready to help you <strong>grow your list faster than ever</strong>.</p>
-  <a href="#REFURL#" class="cta-btn" onclick="goToRegister(); return false;">🚀 Join Free — Claim Your Spot</a>
+  <button onclick="goToRegister()" class="cta-btn">🚀 Join Free — Claim Your Spot</button>
   <div class="stats">
     <div class="stat"><div class="stat-num">600+</div><div class="stat-label">Active Members</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free to Join</div></div>
@@ -107,127 +95,35 @@ h1{font-size:clamp(36px,7vw,72px);font-weight:900;line-height:1.08;margin-bottom
   </div>
 </section>
 
-<section class="features">
-  <h2 class="features-title">Everything You Need to Grow</h2>
-  <p class="features-sub">We didn't just rebuild — we reimagined what a safelist can be.</p>
-  <div class="features-grid">
-    <div class="feature-card">
-      <span class="feature-icon">📧</span>
-      <div class="feature-name">Smart Mailing System</div>
-      <div class="feature-desc">Send targeted emails to thousands of active readers. Advanced audience targeting lets you reach the right people.</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">💰</span>
-      <div class="feature-name">50% Cash Commissions</div>
-      <div class="feature-desc">Earn real money for every referral who upgrades. Paid out reliably with our automated commission system.</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">🏆</span>
-      <div class="feature-name">Contests &amp; Prizes</div>
-      <div class="feature-desc">Monthly cash contests, daily jackpots, spin wheels, and lottery drawings keep you engaged and earning.</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">🎯</span>
-      <div class="feature-name">Splash Pages &amp; Banners</div>
-      <div class="feature-desc">Professional affiliate tools with tracking links, custom banners, and high-converting splash pages.</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">⚡</span>
-      <div class="feature-name">Credit Rewards</div>
-      <div class="feature-desc">Earn credits for reading emails, clicking links, and being active. Spend them to promote your own offers.</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">🛡️</span>
-      <div class="feature-name">Modern &amp; Secure</div>
-      <div class="feature-desc">Built with 2025 technology. Fast, mobile-friendly, secure authentication, and a beautiful new interface.</div>
-    </div>
-  </div>
-</section>
-
-<section class="ribbon">
-  <p class="ribbon-text">"FastListPro isn't just a safelist — it's a <em>community of marketers</em> helping each other succeed. The relaunch has made it <em>better than ever</em>."</p>
-</section>
-
-<section class="testimonials">
-  <div class="testi-grid">
-    <div class="testi-card">
-      <p class="testi-text">I've been a member since the original launch. The new platform is incredible — faster, cleaner, and the commission system actually pays!</p>
-      <div class="testi-author">— Gilroy</div>
-    </div>
-    <div class="testi-card">
-      <p class="testi-text">The contests and daily jackpots keep me coming back every day. I've earned credits and cash just by being active. Best safelist out there.</p>
-      <div class="testi-author">— Gene </div>
-    </div>
-    <div class="testi-card">
-      <p class="testi-text">I joined during the relaunch and got 25 signups in my first week using just the splash pages. The tools here are next level.</p>
-      <div class="testi-author">— Sandy</div>
-    </div>
-  </div>
-</section>
-
-<section class="bottom-cta">
-  <div class="urgency">🔥 Limited-Time Relaunch Bonuses Available</div>
-  <h2>Don't Miss the Relaunch Wave</h2>
-  <p>Early members are locking in advantages — bonus credits, contest entries, and first-mover positioning. Claim yours now.</p>
-  <a href="#REFURL#" class="cta-btn" onclick="goToRegister(); return false;">⚡ Create My Free Account</a>
-</section>
-
-<div class="footer">
-  <p>© 2025 <a href="#REFURL#">FastListPro.com</a> — All rights reserved. Join the relaunch today.</p>
-</div>
-
 <script>
-(function(){
-  var c=document.getElementById("stars");
-  for(var i=0;i<80;i++){
-    var s=document.createElement("span");
-    var size=Math.random()*3+1;
-    s.style.cssText="width:"+size+"px;height:"+size+"px;top:"+Math.random()*100+"%;left:"+Math.random()*100+"%;--d:"+(2+Math.random()*4)+"s;animation-delay:-"+Math.random()*4+"s";
+(function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  let rid = urlParams.get('rid') || urlParams.get('id') || '2';
+  
+  // Enforce rigid override of old defaults
+  if (rid === '1' || rid === '' || rid.toLowerCase() === 'admin') rid = '2';
+  
+  const signupUrl = "https://fastlistpro.com/auth?tab=signup&rid=" + encodeURIComponent(rid);
+  
+  // Initialize starfield
+  const c = document.getElementById("stars");
+  for(let i = 0; i < 80; i++) {
+    const s = document.createElement("span");
+    const size = Math.random() * 3 + 1;
+    s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;animation-delay:-${Math.random()*4}s`;
     c.appendChild(s);
   }
+  
+  // Global function for buttons
+  window.goToRegister = function() {
+    window.location.assign(signupUrl);
+  };
+  
+  // Clean all links in the document
+  document.querySelectorAll('a[href*="fastlistpro.com"], a[href="#REFURL#"]').forEach(link => {
+    link.href = signupUrl;
+  });
 })();
-
-// Tracking Engine
-const urlParams = new URLSearchParams(window.location.search);
-const rid = urlParams.get('rid') || '1'; 
-const finalUrl = "https://fastlistpro.com/?rid=" + rid;
-
-function goToRegister(){
-  window.location.href = finalUrl;
-}
-
-document.querySelectorAll('a').forEach(link => {
-  if (link.getAttribute('href') === '#REFURL#') {
-    link.href = finalUrl;
-  }
-});
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r){
-      var u = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = u;
-        }
-      });
-    }
-  })();
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r) {
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-        }
-      });
-    }
-  })();
 </script>
 </body>
 </html>
