@@ -1,6 +1,6 @@
 <script>
-  // This "Brain" file fixes the link for EVERY page that sends traffic here
   const params = new URLSearchParams(window.location.search);
-  const rid = params.get('rid') || 'default';
-  window.location.href = "https://fastlistpro.com/join.php?rid=" + rid;
+  const rid = params.get('rid') || '2'; // Ensure it defaults to '2' if missing
+  // Forward to the specific signup path with the RID attached
+  window.location.href = "https://fastlistpro.com/auth?tab=signup&rid=" + encodeURIComponent(rid);
 </script>
