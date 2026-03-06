@@ -25,45 +25,23 @@ li{margin:10px 0;font-size:15px;}
 <li>Anti-abuse system built in</li>
 </ul>
 <p style="text-align:center;margin-top:30px;">
-<a class="glow-button" href="https://fastlistpro.com/?rid=2">Click Here To Join FastListPro Free</a>
+<a class="glow-button" href="https://fastlistpro.com/auth?tab=signup&rid=2">Click Here To Join FastListPro Free</a>
 </p>
 </td></tr>
 </table>
-  <script>
+
+<script>
+(function() {
   const urlParams = new URLSearchParams(window.location.search);
-  const rid = urlParams.get('rid') || '1';
-  document.querySelectorAll('a').forEach(link => {
-    if (link.href.includes('fastlistpro.com')) {
-      link.href = "https://fastlistpro.com/?rid=" + rid;
-    }
+  let rid = urlParams.get('rid') || '2';
+  if (rid === '1' || rid === '' || rid.toLowerCase() === 'admin') rid = '2';
+  
+  const signupUrl = "https://fastlistpro.com/auth?tab=signup&rid=" + encodeURIComponent(rid);
+  
+  document.querySelectorAll('a[href*="fastlistpro.com"]').forEach(link => {
+    link.href = signupUrl;
   });
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r){
-      var u = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = u;
-        }
-      });
-    }
-  })();
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r) {
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-        }
-      });
-    }
-  })();
+})();
 </script>
 </body>
 </html>
