@@ -22,7 +22,7 @@ h2{font-size:28px;color:#222;text-align:center;margin-bottom:10px;}
 <body>
 <h2>FastListPro Payout Parade: Who's Winning, What They Got, and Why You're Next</h2>
 <p class="subtitle">Click Contest • Top Promoters • Referral Rewards</p>
-<div class="cta-wrap"><a href="https://fastlistpro.com/?rid=2" class="cta">See What I Just Unlocked</a></div>
+<div class="cta-wrap"><a href="https://fastlistpro.com/auth?tab=signup&rid=2" class="cta">See What I Just Unlocked</a></div>
 <div class="grid">
 <div class="winner gold">
 <img src="https://www.gravatar.com/avatar/d32a6c96f50a6165eee9b75507d59762?d=mm&s=125" alt="Winner">
@@ -40,41 +40,19 @@ h2{font-size:28px;color:#222;text-align:center;margin-bottom:10px;}
 <div class="winner-title">Join the Winners Circle</div>
 </div>
 </div>
-  <script>
+
+<script>
+(function() {
   const urlParams = new URLSearchParams(window.location.search);
-  const rid = urlParams.get('rid') || '1';
-  document.querySelectorAll('a').forEach(link => {
-    if (link.href.includes('fastlistpro.com')) {
-      link.href = "https://fastlistpro.com/?rid=" + rid;
-    }
+  let rid = urlParams.get('rid') || '2';
+  if (rid === '1' || rid === '' || rid.toLowerCase() === 'admin') rid = '2';
+  
+  const signupUrl = "https://fastlistpro.com/auth?tab=signup&rid=" + encodeURIComponent(rid);
+  
+  document.querySelectorAll('a[href*="fastlistpro.com"]').forEach(link => {
+    link.href = signupUrl;
   });
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r){
-      var u = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = u;
-        }
-      });
-    }
-  })();
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r) {
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-        }
-      });
-    }
-  })();
+})();
 </script>
 </body>
 </html>
