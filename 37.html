@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,45 +40,22 @@ h3{color:#333;margin:0 0 15px 0;}
 <p class="info-text"><strong>Why?</strong><br>You WILL win FREE advertising!<br>Just spin the wheel and see what you've won.</p>
 <p class="info-text">Spin now - it's FREE :-)</p>
 </div>
-<a href="https://fastlistpro.com/?rid=2" class="spin-btn">TRY YOUR LUCK</a>
+<a href="https://fastlistpro.com/auth?tab=signup&rid=2" class="spin-btn">TRY YOUR LUCK</a>
 <p class="spins-left">Click to join and start winning!</p>
 </div>
 </div>
-  <script>
+
+<script>
+(function() {
   const urlParams = new URLSearchParams(window.location.search);
-  const rid = urlParams.get('rid') || '1';
-  document.querySelectorAll('a').forEach(link => {
-    if (link.href.includes('fastlistpro.com')) {
-      link.href = "https://fastlistpro.com/?rid=" + rid;
-    }
+  let rid = urlParams.get('rid') || '2';
+  if (rid === '1' || rid === '' || rid.toLowerCase() === 'admin') rid = '2';
+  const signupUrl = "https://fastlistpro.com/auth?tab=signup&rid=" + encodeURIComponent(rid);
+  
+  document.querySelectorAll('a[href*="fastlistpro.com"]').forEach(link => {
+    link.href = signupUrl;
   });
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r){
-      var u = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = u;
-        }
-      });
-    }
-  })();
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r) {
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-        }
-      });
-    }
-  })();
+})();
 </script>
 </body>
 </html>
