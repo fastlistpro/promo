@@ -98,39 +98,25 @@ h1{font-size:clamp(28px,5vw,52px);font-weight:900;background:linear-gradient(135
 <div class="footer">FastListPro — Advertising For Ambitious Professionals<br>© 2026 FastListPro. All rights reserved.</div>
 
 <script>
-function goToRegister() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const refId = urlParams.get('rid') || urlParams.get('id') || '1';
-    window.location.assign("https://fastlistpro.com/auth?tab=signup&rid=" + refId);
-}
+(function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  let rid = urlParams.get('rid') || urlParams.get('id') || '2';
+  
+  // Enforce rigid override of old defaults
+  if (rid === '1' || rid === '' || rid.toLowerCase() === 'admin') rid = '2';
+  
+  const signupUrl = "https://fastlistpro.com/auth?tab=signup&rid=" + encodeURIComponent(rid);
+  
+  // Global function for buttons
+  window.goToRegister = function() {
+    window.location.assign(signupUrl);
+  };
+  
+  // Clean all links in the document
+  document.querySelectorAll('a[href*="fastlistpro.com"]').forEach(link => {
+    link.href = signupUrl;
+  });
+})();
 </script>
-
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r){
-      var u = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = u;
-        }
-      });
-    }
-  })();
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r) {
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-        }
-      });
-    }
-  })();
-</script>
-   </body>
+</body>
 </html>
