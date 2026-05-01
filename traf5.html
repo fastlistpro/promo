@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Traffic 6 Command Center</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-
 <style>
 :root{
     --primary:#ff4d4d;
     --secondary:#00d4ff;
+    --gold:#f5c842;
+    --purple:#c084fc;
 }
 
 * { box-sizing: border-box; }
@@ -31,7 +31,6 @@ body{
     width:100%;
 }
 
-/* HEADER - HITS THE TOP OF THE BROWSER */
 .header{
     text-align:center;
     background: rgba(0,0,0,0.5);
@@ -50,6 +49,13 @@ h1{
 
 .highlight{color:var(--primary);}
 
+.subhead {
+    margin-top: 12px;
+    color: #94a3b8;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -63,6 +69,12 @@ h1{
     border-radius: 12px;
     padding: 25px;
     text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255,255,255,0.3);
 }
 
 .site-title{ font-weight:800; font-size: 1.1rem; margin-bottom: 15px; letter-spacing: 1px;}
@@ -77,9 +89,75 @@ h1{
     font-weight:900;
     font-size: 0.9rem;
     text-transform: uppercase;
+    transition: opacity 0.2s;
 }
 
-/* TESTIMONIAL LINK - RESTORED WORDPRESS URL */
+.join-btn:hover { opacity: 0.85; }
+
+.violet-banner {
+    margin: 0 20px 20px 20px;
+    background: linear-gradient(135deg, rgba(147,51,234,0.15), rgba(192,132,252,0.08));
+    border: 1px solid rgba(192,132,252,0.4);
+    border-radius: 14px;
+    padding: 28px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.violet-banner::before {
+    content:'';
+    position:absolute;
+    top:0;left:0;right:0;
+    height:3px;
+    background: linear-gradient(90deg,#9333ea,#f5c842,#9333ea);
+    background-size:200% auto;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer { 0%{background-position:0% center} 100%{background-position:200% center} }
+
+.violet-eyebrow {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--purple);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.violet-title {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.violet-body {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.violet-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #9333ea, #7c3aed);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 0.95rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s;
+}
+
+.violet-btn:hover { opacity: 0.85; }
+
 .testimonial-anchor {
     text-decoration: none;
     display: block;
@@ -103,35 +181,6 @@ h1{
     background: rgba(34,197,94,0.15); 
 }
 
-/* VISUAL TIMER BOX */
-.timer-wrap {
-    margin: 20px;
-    background: #000;
-    border: 3px solid var(--secondary);
-    border-radius: 15px;
-    padding: 40px 20px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
-}
-
-.timer-label {
-    color: var(--secondary);
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 4px;
-    margin-bottom: 20px;
-    display: block;
-    text-transform: uppercase;
-}
-
-.timer-display {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: clamp(1.4rem, 6vw, 2.8rem);
-    font-weight: 900;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(255,255,255,0.3);
-}
-
 .footer{
     text-align:center;
     padding: 60px 40px;
@@ -146,19 +195,44 @@ h1{
 
     <div class="header">
         <h1>THE TRAFFIC <span class="highlight">6</span></h1>
+        <p class="subhead">Six sites. One network. Built to grow your list and your income.</p>
     </div>
 
     <div class="grid">
-        <div class="card"><div class="site-title">FASTLISTPRO</div><a class="join-btn" href="https://fastlistpro.com/?rid=2" target="_blank">JOIN</a></div>
-        <div class="card"><div class="site-title">BOOSTLOOPE</div><a class="join-btn" href="https://boostloope.com/?ref=BL63275817" target="_blank">JOIN</a></div>
-        <div class="card"><div class="site-title">MAILIGENICS</div><a class="join-btn" href="https://mailigenics.com/r/1" target="_blank">JOIN</a></div>
-        <div class="card"><div class="site-title">SURE SEND MAILER</div><a class="join-btn" href="https://suresendmailer.com/r/1" target="_blank">JOIN</a></div>
-        <div class="card"><div class="site-title">POSTFREE4LIFE</div><a class="join-btn" href="https://postfree4life.com/splashpage.php?id=7&r=Clicks2" target="_blank">JOIN</a></div>
-        
+        <div class="card">
+            <div class="site-title">FASTLISTPRO</div>
+            <a class="join-btn" href="https://fastlistpro.com/?rid=2" target="_blank">JOIN FREE</a>
+        </div>
+        <div class="card">
+            <div class="site-title">BOOSTLOOPE</div>
+            <a class="join-btn" href="https://boostloope.com/?ref=BL63275817" target="_blank">JOIN FREE</a>
+        </div>
+        <div class="card">
+            <div class="site-title">MAILIGENICS</div>
+            <a class="join-btn" href="https://mailigenics.com/r/1" target="_blank">JOIN FREE</a>
+        </div>
+        <div class="card">
+            <div class="site-title">SURE SEND MAILER</div>
+            <a class="join-btn" href="https://suresendmailer.com/r/1" target="_blank">JOIN FREE</a>
+        </div>
+        <div class="card">
+            <div class="site-title">POSTFREE4LIFE</div>
+            <a class="join-btn" href="https://postfree4life.com/splashpage.php?id=7&r=Clicks2" target="_blank">JOIN FREE</a>
+        </div>
         <div class="card">
             <div class="site-title">TRAFFICSTADIUM</div>
-            <a class="join-btn" href="https://trafficstadium.com/?ref=gridiron" target="_blank">JOIN</a>
+            <a class="join-btn" href="https://trafficstadium.com/?ref=gridiron" target="_blank">JOIN FREE</a>
         </div>
+    </div>
+
+    <!-- Violet's X Contest Banner -->
+    <div class="violet-banner">
+        <div class="violet-eyebrow">🐄 Live Contest — May 1–31, 2026</div>
+        <div class="violet-title">Violet Made a $100 Bet</div>
+        <div class="violet-body">
+            Dev says FastListPro can't hit 750 members by May 31st. Violet says it can. She put $100 on it — and it splits among everyone who refers at least 1 verified member in May. More referrals = bigger slice.
+        </div>
+        <a href="https://fastlistpro.com/violets-x.php" target="_blank" class="violet-btn">🐄 Join The Bet →</a>
     </div>
 
     <a href="https://bitcrowcom.wordpress.com/2026/02/16/fastlistpro-fast-and-professional/" target="_blank" class="testimonial-anchor">
@@ -168,43 +242,11 @@ h1{
         </div>
     </a>
 
-    <div class="timer-wrap">
-        <span class="timer-label">TRAFFICSTADIUM LAUNCH COUNTDOWN</span>
-        <div class="timer-display" id="countdown">00d : 00h : 00m : 00s</div>
-    </div>
-
     <div class="footer">
         © 2026 Dev Hobbins – Traffic 6 Hub
     </div>
 
 </div>
-
-<script>
-const target = new Date("March 18, 2026 00:00:00").getTime();
-
-function updateTimer() {
-    const now = new Date().getTime();
-    const gap = target - now;
-
-    if (gap < 0) {
-        document.getElementById("countdown").innerHTML = "WE ARE LIVE!";
-        return;
-    }
-
-    const d = Math.floor(gap / (1000 * 60 * 60 * 24));
-    const h = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
-    const s = Math.floor((gap % (1000 * 60)) / 1000);
-
-    const f = (n) => String(n).padStart(2, '0');
-
-    document.getElementById("countdown").innerHTML = 
-        `${f(d)}d : ${f(h)}h : ${f(m)}m : ${f(s)}s`;
-}
-
-setInterval(updateTimer, 1000);
-updateTimer();
-</script>
 
 </body>
 </html>
