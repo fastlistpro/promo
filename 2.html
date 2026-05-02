@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
+<script>
 (function(){
-    var rid = new URLSearchParams(window.location.search).get('rid') || '';
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('preview')) return;
+    var rid = params.get('rid') || '';
     var base = 'https://fastlistpro.com/register.php';
-    window.location.replace(rid ? base + '?rid=' + rid : base);
+    window.location.replace(rid ? base + '?rid=' + encodeURIComponent(rid) : base);
 })();
 </script>
 <meta charset="utf-8">
@@ -94,47 +96,22 @@ body,html{height:100%;font-family:"Montserrat",sans-serif;}
       <div class="feature"><div class="feature-icon">💰</div><div class="feature-label">Earn Credits</div></div>
       <div class="feature"><div class="feature-icon">👥</div><div class="feature-label">Build Downline</div></div>
     </div>
-    <a href="https://fastlistpro.com/?rid=2" class="cta-btn">Join Free Today</a>
+    <a href="https://fastlistpro.com/register.php" class="cta-btn">Join Free Today</a>
     <p class="footer-note">100% Free To Join • No Credit Card Required</p>
   </div>
 </div>
 </div>
-
 <script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const rid = urlParams.get('rid') || '1'; 
-  document.querySelectorAll('a').forEach(link => {
-    if (link.href.includes('fastlistpro.com')) {
-      link.href = "https://fastlistpro.com/?rid=" + rid;
+(function(){
+    var rid = new URLSearchParams(window.location.search).get('rid') || '';
+    if (rid) {
+        document.querySelectorAll('a').forEach(function(link){
+            if (link.href.includes('fastlistpro.com')) {
+                link.href = 'https://fastlistpro.com/register.php?rid=' + encodeURIComponent(rid);
+            }
+        });
     }
-  });
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r){
-      var u = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = u;
-        }
-      });
-    }
-  })();
-</script>
-<script>
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var r = params.get("rid");
-    if(r) {
-      document.querySelectorAll('a').forEach(function(link){
-        if(link.href.includes("fastlistpro.com")) {
-          link.href = "https://fastlistpro.com/join.php?rid=" + encodeURIComponent(r);
-        }
-      });
-    }
-  })();
+})();
 </script>
 </body>
 </html>
